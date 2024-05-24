@@ -1,0 +1,166 @@
+# VS Code ---------------------------
+
+.vscode/
+
+# Environment ----------------------
+
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Postgres --------------------------
+
+dbimg/
+
+# NextJS ---------------------------
+
+# dependencies
+node_modules
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+coverage
+
+# next.js
+.next
+out
+
+# production
+build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Python ---------------------------
+
+throttle.ctrl
+apicache-py3
+
+# byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+
+# c extensions
+*.so
+
+# distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# pyinstaller
+*.manifest
+*.spec
+
+# installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# translations
+*.mo
+*.pot
+
+# flask stuff
+instance/
+.webassets-cache
+
+# scrapy stuff
+.scrapy
+
+# sphinx documentation
+docs/_build/
+
+# pybuilder
+.pybuilder/
+target/
+
+# ipython
+profile_default/
+ipython_config.py
+
+# pdm
+.pdm.toml
+
+# pep 582
+__pypackages__/
+
+# celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# sageMath parsed files
+*.sage.py
+
+# spyder project settings
+.spyderproject
+.spyproject
+
+# rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# cython debug symbols
+cython_debug/

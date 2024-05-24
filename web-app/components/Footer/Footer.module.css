@@ -1,0 +1,151 @@
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 90%;
+  margin-top: 2.5rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.info p {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--coal-black);
+}
+
+.mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mobile p,
+.mobile a {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: #9b9b9b;
+  width: fit-content;
+  margin: 0;
+  margin-top: 0.75rem;
+}
+
+.buttons {
+  display: none;
+}
+
+.desktop {
+  display: none;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.75rem;
+  border-top: 2px solid var(--deep-ocean-blue);
+}
+
+.social_icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.25rem 0.25rem;
+  border-radius: 50%;
+  background: var(--deep-ocean-blue);
+  color: var(--glacier-white);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@media (min-width: 48rem) {
+
+  .mobile {
+    display: none;
+  }
+
+  .content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttons > * {
+    margin-left: 0.45rem;
+  }
+
+  .socials {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: space-between;
+    position: relative;
+    height: 3rem;
+  }
+
+  .socials p.desktop,
+  .socials a.desktop {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: #9b9b9b;
+  }
+
+  .social_icons {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .social {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .social .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+}

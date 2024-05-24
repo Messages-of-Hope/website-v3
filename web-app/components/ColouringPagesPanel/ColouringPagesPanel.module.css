@@ -1,0 +1,62 @@
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  max-width: 60rem;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+}
+
+.panel a {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.panel img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (orientation: landscape) {
+  .panel {
+    width: 96%;
+    max-width: 100rem;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .panel a {
+    width: 45%;
+  }
+}
+
+@media (min-width: 36rem) {
+  .panel {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    max-width: 100rem;
+  }
+
+  .panel a {
+    width: 100%;
+  }
+}
+
+@media (min-width: 48rem) {
+  .panel {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 75rem) {
+  .panel {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

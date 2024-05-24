@@ -1,0 +1,9 @@
+.main p {
+  margin: 0.25rem auto;
+}
+
+.video {
+  width: 90%;
+  max-width: 65rem;
+  margin: 2rem auto 0 auto;
+}

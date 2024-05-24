@@ -1,0 +1,25 @@
+
+.border {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 16px;
+  transform: rotate(180deg);
+}
+
+.lightBlue {
+  stroke-width: 0px;
+  fill: var(--sky-blue);
+  height: 16px;
+  width: 100%;
+}
+
+.darkBlue {
+  stroke-width: 0px;
+  fill: var(--deep-ocean-blue);
+}
+
+.yellow {
+  stroke-width: 0px;
+  fill: var(--sunshine-yellow);
+}

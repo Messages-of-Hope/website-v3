@@ -1,0 +1,21 @@
+
+.main h3 {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.main p {
+  width: 100%;
+  margin: 0.25rem 0;
+}
+
+.button {
+  align-self: flex-end;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 48rem) {
+  .button {
+    margin-top: 1rem;
+  }
+}

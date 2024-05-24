@@ -1,0 +1,71 @@
+"use client";
+
+import React, { useState, Fragment } from "react";
+import styles from "./Accordion.module.css";
+import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+
+const Accordion = ({ title, data }) => {
+  const [current, setCurrent] = useState(0);
+
+  return (
+    <Fragment>
+
+      {/* Vertical Accordion */}
+      <section className={styles.v_accordion}>
+        <h3 className={styles.title}>{title}</h3>
+        {data.map((item, index) => {
+          return (
+            <article key={index} className={`${styles.item} ${current == index ? styles.open : ""}`} onClick={() => {setCurrent(index)}}>
+              <div className={styles.top_bar} />
+
+              <h6 className={styles.heading}>
+                {item.title}
+                <FontAwesomeIcon icon={faPlus} className={styles.icon}/>
+              </h6>
+              <div className={styles.expandable}>
+                <p>{item.description}</p>
+                <p>{item.description_2}</p>
+                <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/${item.image}`} alt={item.altText} width={900} height={900}/>
+              </div>
+
+              <div className={styles.bottom_bar} />
+            </article>
+          );
+        })}
+      </section>
+
+      {/* Horizontal Accordion */}
+      <section className={styles.container}>
+        <div className={`${styles.left_panel} ${current % 2 == 1 ? styles.even : ""}`} />
+
+        <div className={styles.h_accordion}>
+            {data.map((item, index) => {
+              return (
+                <article key={index} className={`${styles.item} ${current == index ? styles.open : ""}`} onClick={() => {setCurrent(index)}}>
+                  <h6 className={styles.sidebar}>
+                    {item.title}
+                    <FontAwesomeIcon icon={faPlus} className={styles.icon}/>
+                  </h6>
+
+                  <div className={styles.content}>
+                    <div className={styles.text}>
+                      <h3 className={styles.title}>{title}</h3>
+                      <h6 className={styles.heading}>{item.title}</h6>
+                      <p>{item.description}</p>
+                      <p>{item.description_2}</p>
+                    </div>
+                    <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/${item.image}`} alt={item.altText} width={900} height={900}/>
+                  </div>
+                </article>
+              );
+            })}
+        </div>
+
+        <div className={`${styles.right_panel} ${current % 2 == 1 ? styles.even : ""}`} />
+      </section>
+    </Fragment>
+  );
+};
+export default Accordion;
