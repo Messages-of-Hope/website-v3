@@ -106,7 +106,7 @@ const Header = () => {
   useEffect(() => {
     const scrollFunction = () => {
       const header = document.querySelectorAll(`.${styles.header}`);
-      if (document.body.scrollTop > window.innerHeight * 0.2 || document.documentElement.scrollTop > window.innerHeight * 0.2) {
+      if (document.body.scrollTop > window.innerHeight * 0.1 || document.documentElement.scrollTop > window.innerHeight * 0.1) {
         for (let h of header) {
           h.classList.add(styles.active);
         }

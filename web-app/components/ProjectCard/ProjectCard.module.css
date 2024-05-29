@@ -3,8 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
+  height: auto;
   aspect-ratio: 1/1;
   background: var(--glacier-white);
   border: var(--sky-blue) 8px solid;
@@ -36,19 +37,26 @@
   }
 }
 
-.card h6 {
-  margin: 0.5rem 0;
+.card .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  padding: 10% 0;
+}
+
+.card h5 {
   background-color: var(--sky-blue);
-  width: 101%;
-  padding: 0.4rem 1rem;
+  padding: 0.75rem 1rem;
   text-decoration: none;
-  position: absolute;
-  bottom: 7%;
   letter-spacing: -0.05rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .card .icon {
@@ -58,6 +66,17 @@
   padding: 0.4rem;
   border-radius: 50%;
   color: var(--coal-black);
+}
+
+.card p {
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  background: var(--sky-blue);
+  width: 100%;
+  min-height: 40%;
+  height: 40%;
+  max-height: 40%;
+  overflow: hidden;
 }
 
 @media (orientation: landscape) {

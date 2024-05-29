@@ -12,8 +12,20 @@ const Accordion = ({ title, data }) => {
   return (
     <Fragment>
 
+      <section className={styles.v_display}>
+        <h3 className={styles.title}>{title}</h3>
+        {data.map((item, index) => {
+          return (
+            <article key={index} className={styles.item}>
+              <h6 className={styles.heading}>{item.title}</h6>
+              <p>{item.description}</p>
+            </article>
+          );
+        })}
+      </section>
+
       {/* Vertical Accordion */}
-      <section className={styles.v_accordion}>
+      {/* <section className={styles.v_accordion}>
         <h3 className={styles.title}>{title}</h3>
         {data.map((item, index) => {
           return (
@@ -34,7 +46,7 @@ const Accordion = ({ title, data }) => {
             </article>
           );
         })}
-      </section>
+      </section> */}
 
       {/* Horizontal Accordion */}
       <section className={styles.container}>
@@ -52,7 +64,7 @@ const Accordion = ({ title, data }) => {
                   <div className={styles.content}>
                     <div className={styles.text}>
                       <h3 className={styles.title}>{title}</h3>
-                      <h6 className={styles.heading}>{item.title}</h6>
+                      <h5 className={styles.heading}>{item.title}</h5>
                       <p>{item.description}</p>
                       <p>{item.description_2}</p>
                     </div>

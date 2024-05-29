@@ -19,7 +19,7 @@ def get_image(image_id):
   """
   Get an image using a unique image id.
   """
-  image_extensions = [".jpg", ".png", ".gif"]  # Add more extensions if needed
+  image_extensions = [".jpg", ".JPG", ".jpeg", ".JPEG", ".png", ".PNG" ".gif", ".GIF"]  # Add more extensions if needed
   for extension in image_extensions:
     path = f"../dbimg/images/{image_id}{extension}"
     if os.path.exists(path):

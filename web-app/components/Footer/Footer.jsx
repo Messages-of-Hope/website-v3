@@ -44,7 +44,7 @@ const Footer = () => {
       </div>
 
       <div className={styles.socials}>
-        <a className={styles.desktop} href="https://documents.messagesofhope.co.uk/privacy-policy" target="_blank">privacy policy</a>
+        <a className={styles.desktop} href="/privacy-policy" target="_blank">privacy policy</a>
 
         <div className={styles.social_icons}>
           <a className={styles.social} href="mailto:contact@messagesofhope.co.uk">

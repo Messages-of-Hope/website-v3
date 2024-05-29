@@ -62,7 +62,7 @@ h2,
 h3 {
   font-family: var(--font-title);
   text-transform: uppercase;
-  font-size: 2.25rem;
+  font-size: 2.45rem;
   letter-spacing: -0.075rem;
   line-height: 97%;
   margin: 2.5rem auto 1rem auto;
@@ -70,11 +70,11 @@ h3 {
 }
 
 h2 {
-  font-size: 2.15rem;
+  font-size: 2.35rem;
 }
 
 h3 {
-  font-size: 2.05rem;
+  font-size: 2.25rem;
 }
 
 h4,
@@ -82,23 +82,23 @@ h5,
 h6 {
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   letter-spacing: -0.05rem;
   margin: 1rem auto 0.5rem auto;
   color: var(--coal-black);
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
 }
 
 h6 {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
 }
 
 p {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
   margin: 0 auto;
   color: var(--coal-black);
   cursor: default;
