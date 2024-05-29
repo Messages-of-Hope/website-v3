@@ -1,7 +1,7 @@
 
 .banner {
   position: relative;
-  height: 55svh;
+  height: 65svh;
   min-width: 280px;
   background: var(--deep-ocean-blue) left 45% bottom 90% / cover no-repeat border-box;
 }
@@ -21,7 +21,7 @@
 }
 
 .banner.short {
-  height: 38svh;
+  height: 40svh;
 }
 
 .inner_container {
@@ -41,8 +41,9 @@
   .banner {
     height: 100svh;
   }
+
   .banner.short {
-    height: 55svh;
+    height: 40svh;
   }
 }
 
@@ -54,9 +55,9 @@
     max-height: 50rem;
     background: var(--deep-ocean-blue) left 0 bottom 70% / 140% no-repeat border-box;
   }
-  
+
   .banner.short {
-    height: 32svh;
+    height: 20svh;
   }
 
   .title {
@@ -69,8 +70,9 @@
       height: 60svh;
       background: var(--deep-ocean-blue) right 100% bottom 70% / cover no-repeat border-box;
     }
+
     .banner.short {
-      height: 45svh;
+      height: 30svh;
     }
   }
 }

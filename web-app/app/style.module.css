@@ -233,7 +233,7 @@
   }
 }
 
-@media (min-width: 36rem) {
+@media (min-width: 40rem) {
 
   .projects_panel {
     width: 95%;
@@ -280,7 +280,7 @@
 
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 52rem) {
 
   .projects_panel h3 {
     width: 92%;
@@ -308,7 +308,7 @@
 
 }
 
-@media (min-width: 72rem) {
+@media (min-width: 76rem) {
 
   .projects_panel h3 {
     width: 92%;
