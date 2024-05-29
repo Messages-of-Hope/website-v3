@@ -7,6 +7,11 @@ import Button from "@/components/Button/Button";
 import CircleArt from "@/components/CircleArt/CircleArt";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 
+export const metadata = {
+  title: "Projects",
+  description: "Explore the projects created by Messages of Hope and learn how you can get involved."
+}
+
 const getProjects = async () => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/projects`, {

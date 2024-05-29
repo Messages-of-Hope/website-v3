@@ -9,6 +9,11 @@ import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import ImagePanel from "@/components/ImagePanel/ImagePanel";
 import InstagramFeed from "@/components/InstagramFeed/InstagramFeed";
 
+export const metadata = {
+  title: "Bags of Hope",
+  description: "Bags of Hope is a project to give items to patients arriving on psychiatric wards. Our goal is to ensure that nobody arrives to psychiatric wards with only the clothes on their back. Patients should be there for treatment and help, and hospital admissions shouldn't feel like a prison sentence."
+}
+
 const BagsOfHope = async () => {
   return (
     <main className={styles.main}>

@@ -6,6 +6,11 @@ import MessagePanel from "@/components/MessagePanel/MessagePanel";
 import Button from "@/components/Button/Button";
 import CircleArt from "@/components/CircleArt/CircleArt";
 
+export const metadata = {
+  title: "Our Creator",
+  description: "Messages of Hope, founded by Bethan Evans, supports mental health through community engagement and creativity. After overcoming her own struggles with Borderline Personality Disorder, Bethan launched initiatives like Bags of Hope to provide essentials for psychiatric patients. "
+}
+
 const text_1 = [
   "Bethan Evans is the Creator and Director of Messages of Hope.",
   "Messages of Hope was first created in 2020. However between the years of  2019 and 2022 Bethan was at war with her mental health, more  specifically Borderline Personality Disorder, therefore the growth and  development of Messages of Hope slipped far down on her list of  priorities.",
@@ -24,23 +29,12 @@ const text_2 = [
 const OurCreator = () => {
   return (
     <main>
-      <Banner image="V4ssJV22Mv" short title="Our Creator" />
+      <Banner image="tKqTmPtj0X" short title="Our Creator" />
 
       <section className={styles.text_panel}>
         {text_1.map((text, index) => {
           return (<p key={index}>{text}</p>);
         })}
-      </section>
-
-      <section className={styles.image_panel}>
-        <CircleArt className={`${styles.art} ${styles.cir_1}`} />
-        <div className={styles.image_container}>
-          <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/6x33kAkMDE`} alt="A family holding a whiteboard that says 'Never Give UP'" width="4000" height="4000"/>
-        </div>
-        <CircleArt className={`${styles.art} ${styles.cir_2}`} />
-      </section>
-
-      <section className={styles.text_panel}>
         {text_2.map((text, index) => {
           if (text === "Button") {
             return (
@@ -51,7 +45,7 @@ const OurCreator = () => {
           return (<p key={index}>{text}</p>);
         })}
       </section>
-
+      
       <MessagePanel />
     </main>
   );

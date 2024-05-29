@@ -13,19 +13,22 @@ import MessagePanel from "@/components/MessagePanel/MessagePanel";
 import Accordion from "@/components/Accordion/Accordion";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 
+export const metadata = {
+  title: "Connections 2024",
+  description: "Connections 2024 is a poignant short film created by Messages of Hope, delving into the transformative power of connection amidst mental health struggles. Through capturing the heartfelt messages penned by Londoners, the film illuminates the profound sense of empathy and solidarity within our communities."
+}
+
 const Connections2024 = () => {
   return (
     <main className={styles.main}>
-      <Banner image="V4ssJV22Mv" short title="Connections 2024" />
+      <Banner image="eT3lf4bF2M" short title="Connections 2024" />
 
       <div className={styles.blue_grid}>
         <div className={styles.padding_1}/>
         <section className={styles.panel}>
           <h3>What is Connections 2024?</h3>
-          <p>Connections is a short film created by Messages of Hope that explores how we can find hope through connection.</p>
-          <p>We set out to capture Londoners writing messages of hope for people struggling with their mental health and we discovered just how connected we truly are.</p>
-          <p>Connections is proof that somebody out there really does care about you.</p>
-          <p>We hope that this film will inspire you to reach out to someone you care about and remind them that they are not alone.</p>
+          <p>Connections 2024 is a poignant short film created by Messages of Hope, delving into the transformative power of connection amidst mental health struggles. Through capturing the heartfelt messages penned by Londoners, the film illuminates the profound sense of empathy and solidarity within our communities. Each message serves as a beacon of hope, affirming that even in the darkest moments, there are individuals who genuinely care.</p>
+          <p>Our aspiration with Connections 2024 is to ignite a ripple effect of compassion and support, encouraging viewers to extend a hand of empathy to those in need and remind them that they are never alone in their journey towards healing.</p>
         </section>
         <div className={styles.padding_2}/>
       </div>
@@ -33,8 +36,8 @@ const Connections2024 = () => {
       <div className={styles.yellow_grid}>
         <div className={styles.padding_1}/>
         <section className={styles.panel}>
-          <h3>Who was involved?</h3>
-          <p>Connections is funded by The Mayor of London and we worked with Thrive LDN and Speakers Collective to make it happen.</p>
+          <h3>Who was involved?</h3> 
+          <p>Connections 2024 is made possible through the generous funding from The Mayor of London, reflecting a commitment to fostering mental well-being and community resilience. Collaborating closely with Thrive LDN and Speakers Collective, Messages of Hope orchestrated the creation of this film, uniting diverse voices and talents in a collective effort to spread messages of hope and support.</p>
           <p>People from all over London were involved in writing messages of hope for Connections and we also worked with several dancers, including the incredible Speaker Box Street Party.</p>
         </section>
         <div className={styles.padding_2}/>

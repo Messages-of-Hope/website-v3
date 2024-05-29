@@ -44,29 +44,29 @@ const Home = async () => {
   const whatWeDoPoints = [
     {
       "title": "Collaborative Art Projects",
-      "description": "You will often find us out, working in the community, asking strangers to write anonymous messages of hope for people going through a difficult time. We ask these strangers to write their message on one of our canvases, which are then displayed in the local community.",
+      "description": "You will often find us out, working in the community, asking strangers to write anonymous messages of hope for people going through a difficult time. We ask these strangers to write their messages on one of our canvases, which are then displayed in the local community.",
       "description_2": "Participants' messages, displayed publicly, uplift and remind viewers of collective empathy. This initiative shows that small, anonymous acts of kindness can profoundly impact mental well-being, fostering solidarity and support within the community.",
       "image": "i31SIaW5lE",
       "altText": "A family holding a whiteboard that says 'Never Give UP'"
     },
     {
       "title": "Bags of Hope",
-      "description": "Bags of Hope is a project that is set up to give items to patients arriving on psychiatric wards. We ask for donations via our Amazon Wish list and we put these items into bags for patients to have when they arrive on psychiatric wards. Our goal is to ensure that nobody arrives on psychiatric wards with only the clothes on their back.",
+      "description": "Bags of Hope is a project that is set up to give items to patients arriving on psychiatric wards. We ask for donations via our Amazon Wishlist and our JustGiving page, and we put these items into bags for patients to have when they arrive at psychiatric wards. Our goal is to ensure that nobody arrives on psychiatric wards with only the clothes on their back.",
       "description_2": "These Bags of Hope provide essential items such as body wash, wipes, socks, and underwear, offering comfort and dignity to patients during a challenging time.",
       "image": "yv7GjAu48m",
       "altText": "A family holding a whiteboard that says 'Never Give UP'"
     },
     {
       "title": "Video Projects",
-      "description": "Messages of Hope often collaborates with other community organisations, to create videos for mental health awareness days throughout the year. These videos will involve members of the public sharing their messages of hope.",
+      "description": "Messages of Hope often collaborates with other community organisations to create videos for mental health awareness days throughout the year. These videos will involve members of the public sharing their messages of hope.",
       "description_2": "These video projects amplify voices from the community, showcasing personal stories and messages of hope. By featuring diverse perspectives, they aim to raise awareness, reduce stigma, and inspire those struggling with mental health issues, reinforcing the message that they are not alone.",
       "image": "RSi3dKCCjy",
       "altText": "A family holding a whiteboard that says 'Never Give UP'"
     },
     {
       "title": "Collecting Your Messages",
-      "description": "You are able to submit a message of hope whenever you like, via out website. We will then post the submitted messages of hope to our social media or your message might be turned into a sticker and placed in various spots around the local community.",
-      "description_2": "Submitting a message of hope is a simple yet impactful way to support others. These messages, shared on social media or turned into stickers, spread positivity and encouragement throughout the community, creating a widespread network of support for those facing mental health challenges.",
+      "description": "You can submit a message of hope whenever you like via our website. We will then post the submitted messages of hope on our social media, or your message might be turned into a sticker and placed in various spots around the local community.",
+      "description_2": "Submitting a message of hope is a simple yet impactful way to support others. These messages, shared on social media or turned into stickers, spread positivity and encouragement throughout the community, creating a widespread support network for those facing mental health challenges.",
       "image": "61i9PiBRIV",
       "altText": "A family holding a whiteboard that says 'Never Give UP'"
     }
