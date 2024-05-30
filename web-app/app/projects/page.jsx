@@ -1,10 +1,7 @@
 import React from "react";
 import Banner from "@/components/Banner/Banner.jsx";
 import styles from "./style.module.css";
-import Image from "next/image";
 import MessagePanel from "@/components/MessagePanel/MessagePanel";
-import Button from "@/components/Button/Button";
-import CircleArt from "@/components/CircleArt/CircleArt";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 
 export const metadata = {
@@ -14,7 +11,7 @@ export const metadata = {
 
 const getProjects = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/projects`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/projects`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -84,7 +84,7 @@ const Header = () => {
   useEffect(() => {
     const getProjects = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ADDR}/projects?total=2`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/projects/?total=2`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -129,7 +129,7 @@ const Header = () => {
       <header ref={headerRef} className={`${styles.header}`}>
         <div className={`${styles.inner_header} ${styles.mobile}`}>
           <div className={styles.container}>
-            <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/pF3vE95CRd`} alt="Messages of Hope logo" width={100} height={100}/>
+            <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/pF3vE95CRd`} alt="Messages of Hope logo" width={100} height={100}/>
             <button className={`${styles.hamburger} ${showMobileNav ? styles.open : ""}`} onClick={() => setShowMobileNav(!showMobileNav)}>
               <span></span>
               <span></span>
@@ -142,7 +142,7 @@ const Header = () => {
 
         <div className={`${styles.inner_header} ${styles.desktop}`}>
           <div className={styles.container}>
-            <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/pF3vE95CRd`} alt="Messages of Hope logo" width={100} height={100}/>
+            <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/pF3vE95CRd`} alt="Messages of Hope logo" width={100} height={100}/>
             <ul className={styles.nav}>
               <li>
                 <Link href="/">Home</Link>

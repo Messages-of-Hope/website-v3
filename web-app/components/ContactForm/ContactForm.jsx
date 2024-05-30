@@ -17,7 +17,7 @@ const ContactForm = ({ title, text }) => {
   const sendEmail = async (event) => {
     event.preventDefault();
     const send = async () => {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ADDR}/send-email`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

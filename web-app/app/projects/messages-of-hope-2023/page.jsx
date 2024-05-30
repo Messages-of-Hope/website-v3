@@ -25,8 +25,8 @@ const MessagesOfHope2023 = () => {
     
       <section className={styles.panel}>
         <div className={styles.images}>
-          <Image className={styles.blue} src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/9ntrQUf34S`} alt="A group of people writing messages of hope on canvases at Barry Island" width={800} height={800} />
-          <Image className={styles.yellow} src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/Ut7HH9AXP4`} alt="Painted rocks with messages written on them" width={800} height={800} />
+          <Image className={styles.blue} src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/9ntrQUf34S`} alt="A group of people writing messages of hope on canvases at Barry Island" width={800} height={800} />
+          <Image className={styles.yellow} src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/Ut7HH9AXP4`} alt="Painted rocks with messages written on them" width={800} height={800} />
         </div>
         <div className={styles.text}>
           <p>On the 29th of July 2023, Messages of Hope hosted a transformative collaborative art project at Barry Island, which turned out to be a resounding success. The event saw an overwhelming outpouring of support, with over 200 heartfelt messages collected and countless inspiring and empowering conversations shared. People of all ages, from children to adults, left their marks on pre-prepared canvases, filling them with messages of hope and encouragement.</p>
@@ -35,7 +35,7 @@ const MessagesOfHope2023 = () => {
         </div>
       </section>
 
-      <Image className={styles.image_panel} src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/64iJ879h4k`} alt="Bethan Evans standing in front of the full canvases at the Barry YMCA" width={2000} height={2000} />
+      <Image className={styles.image_panel} src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/64iJ879h4k`} alt="Bethan Evans standing in front of the full canvases at the Barry YMCA" width={2000} height={2000} />
     
       <MessagePanel className={styles.message_panel} />
     </main>
