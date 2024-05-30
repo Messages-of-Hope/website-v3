@@ -4,7 +4,7 @@ import BottomBorder from "./BottomBorder";
 import styles from "./Banner.module.css";
 
 const Banner = ({ title, image, children, short, minimal }) => {
-  const imageUrl = `${process.env.NEXT_PUBLIC_BACKEND_ADDR}/images/${image}`;
+  const imageUrl = `${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/images/${image}`;
   const backgroundImage = `linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.45) 100%), url(${imageUrl})`;
 
   return (

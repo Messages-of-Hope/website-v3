@@ -7,21 +7,27 @@ module.exports = {
       {
         protocol: 'http',
         hostname: 'flask-server',
-        port: '8002',
+        port: '8001',
         pathname: '/images/**',
       },
       {
         protocol: 'http',
         hostname: 'flask-server',
-        port: '8002',
+        port: '8001',
         pathname: '/colouring-pages/**',
       },
       {
         protocol: 'https',
-        hostname: '**.messagesofhope.co.uk',
-        port: '',
+        hostname: 'flask-server',
+        port: '8001',
         pathname: '/images/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'flask-server',
+        port: '8001',
+        pathname: '/colouring-pages/**',
+      }
     ],
   },
 }

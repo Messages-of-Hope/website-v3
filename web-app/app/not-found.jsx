@@ -12,7 +12,7 @@ export const metadata = {
 const NotFound = () => {
   return (
     <main>
-      <Banner short image="/write-a-message/banner.jpg"/>
+      <Banner short/>
 
       <h1 className={`heading ${styles.heading404}`}>404 Page Not Found</h1>
       <p className={`body ${styles.body404}`}>I&apos;m not sure how you got here, but this page doesn&apos;t exist.</p>

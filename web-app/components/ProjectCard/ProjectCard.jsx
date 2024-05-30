@@ -10,7 +10,7 @@ const ProjectCard = ({ title, url, image, description }) => {
       href={url}
       className={styles.card}
       style={{ background: `linear-gradient(0deg, rgba(152,211,231,0.3) 0%, rgba(152,211,231,0.15) 55%, rgba(152,211,231,0) 100%),
-                            url("${process.env.NEXT_PUBLIC_BACKEND_ADDR}/images/${image}") center/cover no-repeat, 
+                            url("${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/images/${image}") center/cover no-repeat, 
                             var(--glacier-white)` }}>
       <div className={styles.content}>
         <h5>

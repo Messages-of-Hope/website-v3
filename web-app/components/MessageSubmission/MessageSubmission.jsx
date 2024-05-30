@@ -13,7 +13,7 @@ const MessageSubmission = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const send = async () => {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ADDR}/messages`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/messages`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -10,7 +10,7 @@ const ColouringPagesPanel = () => {
   useEffect(() => {
     const fetchPages = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ADDR}/colouring-pages`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/colouring-pages`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -28,7 +28,7 @@ const ColouringPagesPanel = () => {
 
   const updateDownloadCount = async (id) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ADDR}/colouring-pages/download/${id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/colouring-pages/download/${id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,8 +44,8 @@ const ColouringPagesPanel = () => {
     <section className={styles.panel}>
       {
         pages.map((page, i) => (
-          <a onClick={() => {updateDownloadCount(page.id)}} key={i} href={`${process.env.NEXT_PUBLIC_BACKEND_ADDR}/colouring-pages/${page.id}`} download={`${page.title}.png`}>
-            <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/colouring-pages/${page.id}`} alt={page.title} width={800} height={800} />
+          <a onClick={() => {updateDownloadCount(page.id)}} key={i} href={`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/colouring-pages/${page.id}`} download={`${page.title}.png`}>
+            <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/colouring-pages/${page.id}`} alt={page.title} width={800} height={800} />
           </a>
         ))
       }

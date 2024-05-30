@@ -61,13 +61,9 @@ const whatWeDoPoints = [
   }
 ]
 
-/**
- * Fetch the projects from the backend
- * @returns {Promise} The projects
- */
 const getProjects = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/projects?total=5`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/projects?total=5`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -126,7 +122,7 @@ const Home = async () => {
           )}
           <ProjectCard url="/projects" title="View All Projects" image="1nxfPI6QBa"/>
           <div className={styles.projects_image}>
-            <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/srlnEmEMeq`} alt="A group of yound people wearing the Messages of Hope merchandise" width={962} height={457}/>
+            <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/srlnEmEMeq`} alt="A group of yound people wearing the Messages of Hope merchandise" width={962} height={457}/>
           </div>
         </div>
       </section>
