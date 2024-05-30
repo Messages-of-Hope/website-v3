@@ -1,0 +1,136 @@
+
+:root {
+  --glacier-white: #fafafa;
+  --sky-blue: #98d3e7;
+  --sunshine-yellow: #f5b327;
+  --refreshing-mint: #b1e5c7;
+  --soft-peach: #faa49a;
+  --deep-ocean-blue: #3c5d82;
+  --dark-slate: #282f3d;
+  --coal-black: #121111;
+
+  --softened-deep-ocean-blue: #d4e1e9;
+  --softened-sky-blue: #e3f6fd;
+  --softened-sunshine-yellow: #fceac4;
+  --softened-coal-black: #888888;
+
+  --font-title: "Coiny", sans-serif;
+  --font-heading: "Quicksand", sans-serif;
+  --font-subheading: "Quicksand", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: -webkit-fill-available;
+  overflow-x: hidden;
+
+  min-width: 280px;
+  width: 100%;
+
+  background: var(--glacier-white);
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  min-width: 280px;
+  width: 100%;
+  min-height: -webkit-fill-available;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+
+  background: var(--glacier-white);
+}
+
+main {
+  overflow: hidden;
+  min-width: 280px;
+  width: 100%;
+  min-height: 90svh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  font-size: 2.45rem;
+  letter-spacing: -0.075rem;
+  line-height: 97%;
+  margin: 2.5rem auto 1rem auto;
+  color: var(--coal-black);
+}
+
+h2 {
+  font-size: 2.35rem;
+}
+
+h3 {
+  font-size: 2.25rem;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: -0.05rem;
+  margin: 1rem auto 0.5rem auto;
+  color: var(--coal-black);
+}
+
+h5 {
+  font-size: 1.35rem;
+}
+
+h6 {
+  font-size: 1.15rem;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin: 0 auto;
+  color: var(--coal-black);
+  cursor: default;
+}
+
+@media (min-width: 48rem) {
+
+  h1 {
+    font-size: 4.25rem;
+  }
+
+  h2 {
+    font-size: 3.75rem;
+  }
+
+  h3 {
+    font-size: 3.25rem;
+  }
+
+  h4 {
+    font-size: 1.75rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
+
+  h6 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}

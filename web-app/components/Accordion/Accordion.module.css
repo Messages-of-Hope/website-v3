@@ -1,0 +1,203 @@
+
+.container {
+  display: none;
+}
+
+.v_display {
+  width: 97%;
+  margin: 1.5rem auto;
+}
+
+.v_display h3 {
+  margin-top: 0;
+  width: 84%;
+}
+
+.v_display .item {
+  background: var(--sky-blue);
+  border-radius: 10px;
+  border: 1px solid transparent;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 4px auto;
+}
+
+.v_display .item:nth-of-type(even) {
+  background: var(--sunshine-yellow);
+}
+
+.v_display .item h6 {
+  width: 100%;
+  margin: 0;
+}
+
+.v_display .item p {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 55rem) {
+
+  .v_display {
+    display: none;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .container .left_panel,
+  .container .right_panel {
+    display: block;
+    background: var(--softened-sky-blue);
+    width: 16%;
+    min-height: 30rem;
+    height: 100svh;
+    max-height: 30rem;
+    margin: calc(3rem + 5px) 5px 5px 5px;
+    transition: all 0.8s ease-in-out 0s;
+  }
+
+  .container .left_panel.even,
+  .container .right_panel.even {
+    background: var(--softened-sunshine-yellow);
+    transition: all 0.8s ease-in-out 0.15s;
+  }
+
+  .container .left_panel {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-right: 5%;
+    margin-left: 0;
+  }
+
+  .container .right_panel {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-left: 5%;
+    margin-right: 0;
+  }
+
+  .h_accordion {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    min-width: min(97%, 100rem);
+    width: min(97%, 100rem);
+    max-width: 100rem;
+    min-height: 30rem;
+    height: 100svh;
+    max-height: 30rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+
+  .h_accordion .item {
+    border-radius: 15px;
+    background: var(--sky-blue);
+    position: relative;
+    margin: 5px;
+    flex: 0.5;
+    transition: flex 0.8s ease-in-out 0s;
+    overflow: hidden;
+  }
+
+  .h_accordion .item:nth-of-type(even) {
+    background: var(--sunshine-yellow);
+  }
+
+  .h_accordion .item:hover {
+    cursor: pointer;
+  }
+
+  .h_accordion .item.open:hover {
+    cursor: default;
+  }
+
+  .h_accordion .item.open {
+    flex: 8;
+    transition: flex 0.8s ease-in-out 0.15s;
+  }
+
+  .h_accordion .item .content {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    position: absolute;
+    justify-content: space-between;
+    margin: 0 auto;
+    transition: opacity 0.15s ease-in-out 0s;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .h_accordion .item.open .content {
+    opacity: 1;
+    transition: opacity 0.15s ease-in-out 0.8s;
+  }
+
+  .h_accordion .sidebar {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg) translate(50%, 5%);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    opacity: 1;
+    transition: opacity 0.15s ease-in-out 0.8s;
+  }
+
+  .h_accordion .sidebar .icon {
+    margin-left: 0;
+    position: relative;
+    top: 6px;
+    left: 1px;
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .h_accordion .item.open .sidebar {
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+  }
+
+  .h_accordion .item .content img {
+    width: 40%;
+    aspect-ratio: 1/1;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  .h_accordion .item .text {
+    min-width: 25rem;
+    width: 55%;
+    max-width: 35rem;
+    padding: 1rem;
+    margin-left: 3%;
+    margin-right: 3%;
+    text-align: left;
+  }
+
+  .h_accordion .item * {
+    cursor: pointer;
+  }
+
+  .h_accordion .item.open * {
+    cursor: default;
+  }
+
+  .h_accordion p {
+    margin: 0.5rem auto;
+  }
+
+}

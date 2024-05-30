@@ -1,0 +1,143 @@
+
+.section,
+.alt_section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.section .padding {
+  background: var(--sky-blue);
+}
+
+.alt_section .padding {
+  background: var(--sunshine-yellow);
+  grid-column: 4 / span 1;
+}
+
+.section .panel {
+  grid-column: 2 / span 1;
+  background: var(--sky-blue);
+  margin-right: 3rem;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90lvw;
+  max-width: 45rem;
+}
+
+.alt_section .panel {
+  grid-column: 3 / span 1;
+  background: var(--sunshine-yellow);
+  margin-left: 3rem;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90lvw;
+  max-width: 45rem;
+}
+
+.section .panel h3 {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.alt_section .panel h3 {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.section .panel p {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.alt_section .panel p {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.section .video {
+  display: none;
+  width: 90lvw;
+  max-width: 27rem;
+  align-self: center;
+}
+
+.alt_section .video {
+  display: none;
+  width: 90lvw;
+  max-width: 27rem;
+  align-self: center;
+  grid-column: 2 / span 1;
+}
+
+.mobile_videos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 80rem;
+  margin: 2rem auto;
+}
+
+.mobile_videos .video {
+  min-width: 16rem;
+  width: 100%;
+  margin: 0.5rem;
+  max-width: 40rem;
+}
+
+.text_panel {
+  width: 100%;
+  background: var(--deep-ocean-blue);
+  padding: 2.5rem 0;
+  margin: 2rem auto;
+}
+
+.text_panel p {
+  width: 90%;
+  max-width: 70rem;
+  margin: 0 auto;
+  color: var(--glacier-white);
+}
+
+.image_gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  grid-gap: 1rem;
+  width: 100%;
+  max-width: 80rem;
+  margin: 2rem auto;
+}
+
+.image_gallery img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (min-width: 76rem) {
+  .section .video,
+  .alt_section .video {
+    display: block;
+  }
+
+  .mobile_videos {
+    display: none;
+  }
+}

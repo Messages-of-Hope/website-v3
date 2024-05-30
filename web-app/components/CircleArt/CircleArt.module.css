@@ -1,0 +1,27 @@
+
+.cls_1, .cls_2, .cls_3 {
+  transition: all 0.5s;
+  stroke-width: 0px;
+}
+
+.cls_1 {
+  fill: #3c5d82;
+}
+
+.cls_2 {
+  fill: #f5b327;
+}
+
+.cls_3 {
+  fill: #98d3e7;
+}
+
+.svg:hover .cls_1,
+.svg:hover .cls_2,
+.svg:hover .cls_3{
+  transform: scale(0.95);
+}
+
+.svg:hover .ani {
+  transform: scale(0.95) translate(0, -3px);
+}

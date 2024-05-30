@@ -1,0 +1,82 @@
+
+.main h3 {
+  width: 100%;
+}
+
+.main p {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.main p a {
+  color: var(--deep-ocean-blue);
+}
+
+.button {
+  align-self: center;
+  margin-top: 0.5rem;
+}
+
+.stats_panel {
+  width: 100%;
+  background: var(--deep-ocean-blue);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem auto;
+  flex-wrap: wrap;
+}
+
+.stats_panel article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem;
+  padding: 1rem;
+  border: 4px solid var(--glacier-white);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 20rem;
+}
+
+.stats_panel h4,
+.stats_panel p {
+  color: var(--glacier-white);
+  width: 100%;
+  text-align: center;
+}
+
+.stats_panel p {
+  font-size: 1.35rem;
+}
+
+.icon {
+  color: var(--glacier-white);
+  width: 80%;
+  font-size: 6rem;
+}
+
+.ward_panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--sunshine-yellow);
+  margin: 1.5rem auto;
+  padding: 2rem 0;
+}
+
+.ward_panel p {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 70rem;
+}
+
+@media (min-width: 48rem) {
+  .ward_panel,
+  .stats_panel {
+    margin: 3.5rem auto;
+  }
+}

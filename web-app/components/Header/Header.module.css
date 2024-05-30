@@ -1,0 +1,349 @@
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: background-color 0.3s;
+  width: 100%;
+  z-index: 100;
+  height: 3.9rem;
+}
+
+.active {
+  background-color: var(--glacier-white);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.inner_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-width: 150rem;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.container img {
+  height: 3rem;
+  width: auto;
+  position: relative;
+}
+
+.desktop {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 0.75rem;
+  padding: 0;
+}
+
+.nav li {
+  list-style: none;
+  margin: 0 0.2rem;
+}
+
+.nav a,
+.nav button,
+.login {
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  color: var(--glacier-white);
+  font-weight: 500;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  padding: 0.2rem 0.65rem;
+  transition: all 0.3s;
+}
+
+.nav a:hover,
+.nav button:hover,
+.login:hover {
+  transform: scale(1.05);
+}
+
+.nav .icon {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.2rem;
+  position: relative;
+  transform: scale(0.75);
+  transition: transform 0.3s;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.active .nav a,
+.active .nav button,
+.active .login,
+.header:hover .nav a,
+.header:hover .nav button,
+.header:hover .login {
+  color: var(--coal-black);
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--glacier-white);
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.login .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: 0.2rem;
+  position: relative;
+  transform: scale(0.75);
+}
+
+.mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mobile img {
+  height: 3rem;
+  width: auto;
+}
+
+.hamburger {
+  all: unset;
+  display: block;
+  width: 2rem;
+  position: relative;
+  top: 5%;
+  height: 2rem;
+  z-index: 25;
+  cursor: pointer;
+
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+}
+
+.hamburger:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  right: 0;
+  overflow-y: visible;
+
+  background-color: var(--glacier-white);
+  border-radius: 100px;
+
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.header.desktop:hover .hamburger span,
+.active .hamburger span {
+  background-color: var(--coal-black);
+}
+
+.hamburger span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger span:nth-child(2),
+.hamburger span:nth-child(3) {
+  top: 42%;
+  width: 68%;
+}
+
+.hamburger span:nth-child(4) {
+  top: 80%;
+  width: 35%;
+}
+.hamburger.open span {
+  background-color: var(--coal-black);
+}
+
+.hamburger.open span:nth-child(1),
+.hamburger.open span:nth-child(4) {
+  width: 0%;
+}
+
+.hamburger.open span:nth-child(2) {
+  width: 100%;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.hamburger.open span:nth-child(3) {
+  width: 100%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.nav li {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 3rem;
+  left: -7.5rem;
+  width: 35rem;
+  background: var(--glacier-white);
+  padding: 1rem;
+  border-radius: 15px;
+  border: 8px solid var(--sky-blue);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  z-index: 99;
+  animation: slide_down_bounce 0.5s;
+}
+
+@keyframes slide_down_bounce {
+  0% {
+    transform: translateY(-40rem);
+  }
+  80% {
+    transform: translateY(0.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.dropdown ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.dropdown li {
+  list-style: none;
+  margin: 0.45rem;
+}
+
+.dropdown a {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dropdown a:hover {
+  transform: none;
+  background-color: var(--softened-sky-blue);
+  border-radius: 15px;
+}
+
+.projects_button + .dropdown {
+  border-color: var(--sunshine-yellow);
+}
+
+.projects_button + .dropdown a:hover {
+  background-color: var(--softened-sunshine-yellow);
+}
+
+.dropdown li h6 {
+  font-size: 1rem;
+  margin: 0;
+  margin-bottom: 0.25rem;
+}
+
+.dropdown li p {
+  font-size: 0.9rem;
+  margin: 0;
+  cursor: pointer;
+  color: var(--softened-coal-black);
+}
+
+.dropdown li .icon {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  transform: scale(0.65);
+  margin-left: 0;
+}
+
+.header.interact {
+  background-color: var(--glacier-white);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.header.interact .nav a,
+.header.interact .nav button,
+.header.interact .login {
+  color: var(--coal-black);
+}
+
+.header.projects .projects_button,
+.header.about .about_button {
+  background-color: var(--softened-deep-ocean-blue);
+  border-radius: 25px;
+}
+
+.header.projects .projects_button .icon,
+.header.about .about_button .icon {
+  transform: scale(0.65) rotate(90deg);
+}
+
+@media (min-width: 54rem) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: flex;
+  }
+
+  .header:hover {
+    background-color: var(--glacier-white);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+}

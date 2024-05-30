@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+
+  redis-server:
+    image: "redis:7"
+    container_name: "redis-server"
+    restart: always
+
+  postgres-server:
+    image: "postgres:16.2"
+    container_name: "postgres-server"
+    volumes:
+      - "./dbimg/data:/var/lib/postgresql/data"
+    restart: always
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    env_file:
+      - .env
+
+  nextjs-server:
+    image: "node:20"
+    container_name: "nextjs-server"
+    entrypoint: "/bin/bash"
+    command: "/workspace/web-app/startup.sh"
+    volumes:
+      - ".:/workspace"
+    restart: always
+    ports:
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+    env_file:
+      - .env
+
+  flask-server:
+    image: "python:3.11"
+    container_name: "flask-server"
+    entrypoint: "/bin/bash"
+    command: "/workspace/api/startup.sh"
+    volumes:
+      - ".:/workspace"
+    restart: always
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+    env_file:
+      - .env

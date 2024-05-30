@@ -1,0 +1,58 @@
+
+.message_panel {
+  width: 100%;
+  background: var(--sunshine-yellow);
+  position: relative;
+  margin-bottom: 2;
+  margin: 2.5rem auto 2.5rem auto;
+  height: 20rem;
+}
+
+.inner_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100rem;
+  height: 100%;
+  margin: 0 auto;
+  background: var(--sunshine-yellow);
+  overflow: hidden;
+  position: relative;
+}
+
+.inner_container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+}
+
+.inner_container .hidden {
+  opacity: 0;
+  transform: translate(100svh, -50%);
+}
+
+.inner_container .after {
+  opacity: 0;
+  transform: translate(-100svh, -50%);
+}
+
+.message_panel p {
+  width: 100%;
+  text-align: center;
+  margin: 0.5rem auto;
+}
+
+@media (orientation: landscape) {
+  .message_panel {
+    height: 17.5rem;
+  }
+}

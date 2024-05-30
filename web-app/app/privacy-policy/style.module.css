@@ -1,0 +1,17 @@
+.date {
+  margin: 2rem auto;
+  width: 90%;
+}
+
+.section {
+  margin: 3.5rem auto;
+  width: 90%;
+}
+
+.section p {
+  margin: 1rem auto;
+}
+
+.ul {
+  list-style: none;
+}
