@@ -17,7 +17,7 @@ const NotFound = () => {
       <p className={styles.date}><b>Last updated December 21, 2023</b></p>
 
       <section className={styles.section}>
-        <p>This privacy notice for Messages of Hope (MOH) C.I.C ('<b>we</b>', '<b>us</b>', or '<b>our</b>'), describes how and why we might collect, store, use, and/or share ( '<b>process</b>') your information when you use our services ('<b>Services</b>'), such as when you:</p>
+        <p>This privacy notice for Messages of Hope (MOH) C.I.C (&apos;<b>we</b>&apos;, &apos;<b>us</b>&apos;, or &apos;<b>our</b>&apos;), describes how and why we might collect, store, use, and/or share ( &apos;<b>process</b>&apos;) your information when you use our services (&apos;<b>Services</b>&apos;), such as when you:</p>
         <ul>
           <li><p>Visit our website at <a href="http://www.messagesofhope.co.uk" target="_blank">http://www.messagesofhope.co.uk</a> , or any website of ours that links to this privacy notice</p></li>
           <li><p>Engage with us in other related ways, including any sales, marketing, or events</p></li>
@@ -78,7 +78,7 @@ const NotFound = () => {
         <p><i><b>In Short:</b> We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent.</i></p>
         <p><b>We process your personal information for a variety of reasons, depending on how you interact with our Services, including:</b></p>
         <ul>
-          <li><p><b>To save or protect an individual's vital interest.</b> We may process your information when necessary to save or protect an individual’s vital interest, such as to prevent harm</p></li>
+          <li><p><b>To save or protect an individual&apos;s vital interest.</b> We may process your information when necessary to save or protect an individual’s vital interest, such as to prevent harm</p></li>
         </ul>
       </section>
 
@@ -123,17 +123,17 @@ const NotFound = () => {
         <h5>7. What Are Your Privacy Rights?</h5>
 
         <p><i><b>In Short:</b> In some regions, such as the European Economic Area (EEA), United Kingdom (UK), and Switzerland, you have rights that allow you greater access to and control over your personal information. You may review, change, or terminate your account at any time.</i></p>
-        <p>In some regions (like the EEA, UK, and Switzerland), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; (iv) if applicable, to data portability; and (v) not to be subject to automated decision-making. In certain circumstances, you may also have the right to object to the processing of your personal information. You can make such a request by contacting us by using the contact details provided in the section <a href="#contact">'HOW CAN YOU CONTACT US ABOUT THIS NOTICE?'</a> below.</p>
+        <p>In some regions (like the EEA, UK, and Switzerland), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; (iv) if applicable, to data portability; and (v) not to be subject to automated decision-making. In certain circumstances, you may also have the right to object to the processing of your personal information. You can make such a request by contacting us by using the contact details provided in the section <a href="#contact">&apos;HOW CAN YOU CONTACT US ABOUT THIS NOTICE?&apos;</a> below.</p>
         <p>We will consider and act upon any request in accordance with applicable data protection laws. If you are located in the EEA or UK and you believe we are unlawfully processing your personal information, you also have the right to complain to your <a href="https://ec.europa.eu/newsroom/article29/items/612080" target="_blank">Member State data protection authority</a> or <a href="https://ico.org.uk/make-a-complaint/data-protection-complaints/data-protection-complaints/" target="_blank">UK data protection authority</a>.</p>
         <p>If you are located in Switzerland, you may contact the <a href="https://www.edoeb.admin.ch/edoeb/en/home.html" target="_blank">Federal Data Protection and Information Commissioner</a>.</p>
-        <p><b><u>Withdrawing your consent:</u></b> If we are relying on your consent to process your personal information, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section <a href="#contact">'HOW CAN YOU CONTACT US ABOUT THIS NOTICE?'</a> below.</p>
+        <p><b><u>Withdrawing your consent:</u></b> If we are relying on your consent to process your personal information, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section <a href="#contact">&apos;HOW CAN YOU CONTACT US ABOUT THIS NOTICE?&apos;</a> below.</p>
         <p>However, please note that this will not affect the lawfulness of the processing before its withdrawal nor, will it affect the processing of your personal information conducted in reliance on lawful processing grounds other than consent.</p>
       </section>
 
       <section className={styles.section} id="DNT">
         <h5>8. Controls For Do-Not-Track Features</h5>
 
-        <p>Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ('DNT') feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage no uniform technology standard for recognising and implementing DNT signals has been finalised. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this privacy notice.</p>
+        <p>Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track (&apos;DNT&apos;) feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage no uniform technology standard for recognising and implementing DNT signals has been finalised. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this privacy notice.</p>
       </section>
 
       <section className={styles.section} id="otherlaws">
@@ -142,18 +142,18 @@ const NotFound = () => {
         <p><i><b>In Short:</b> You may have additional rights based on the country you reside in.</i></p>
 
         <h6>Australia and New Zealand</h6>
-        <p>We collect and process your personal information under the obligations and conditions set by Australia's Privacy Act 1988 and New Zealand's Privacy Act 2020 (Privacy Act).</p>
+        <p>We collect and process your personal information under the obligations and conditions set by Australia&apos;s Privacy Act 1988 and New Zealand&apos;s Privacy Act 2020 (Privacy Act).</p>
         <p>This privacy notice satisfies the notice requirements defined in both Privacy Acts , in particular: what personal information we collect from you, from which sources, for which purposes, and other recipients of your personal information.</p>
         <p>If you do not wish to provide the personal information necessary to fulfill their applicable purpose, it may affect our ability to provide our services, in particular:</p>
         <ul>
           <li><p>offer you the products or services that you want</p></li>
           <li><p>respond to or help with your requests</p></li>
         </ul>
-        <p>At any time, you have the right to request access to or correction of your personal information. You can make such a request by contacting us by using the contact details provided in the section <a href="#request">'HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?'</a></p>
-        <p>If you believe we are unlawfully processing your personal information, you have the right to submit a complaint about a breach of the Australian Privacy Principles to the <a href="https://www.oaic.gov.au/privacy/privacy-complaints/lodge-a-privacy-complaint-with-us">Office of the Australian Information Commissioner</a> and a breach of New Zealand's Privacy Principles to the <a href="https://www.privacy.org.nz/your-rights/making-a-complaint-to-the-privacy-commissioner/">Office of New Zealand Privacy Commissioner</a>.</p>
+        <p>At any time, you have the right to request access to or correction of your personal information. You can make such a request by contacting us by using the contact details provided in the section <a href="#request">&apos;HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?&apos;</a></p>
+        <p>If you believe we are unlawfully processing your personal information, you have the right to submit a complaint about a breach of the Australian Privacy Principles to the <a href="https://www.oaic.gov.au/privacy/privacy-complaints/lodge-a-privacy-complaint-with-us">Office of the Australian Information Commissioner</a> and a breach of New Zealand&apos;s Privacy Principles to the <a href="https://www.privacy.org.nz/your-rights/making-a-complaint-to-the-privacy-commissioner/">Office of New Zealand Privacy Commissioner</a>.</p>
 
         <h6>Republic of South Africa</h6>
-        <p>At any time, you have the right to request access to or correction of your personal information. You can make such a request by contacting us by using the contact details provided in the section <a href="#request">'HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?'</a></p>
+        <p>At any time, you have the right to request access to or correction of your personal information. You can make such a request by contacting us by using the contact details provided in the section <a href="#request">&apos;HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?&apos;</a></p>
         <p>If you are unsatisfied with the manner in which we address any complaint with regard to our processing of personal information, you can contact the office of the regulator, the details of which are:</p>
         <ul>
           <li><p><a href="https://inforegulator.org.za/">The Information Regulator (South Africa)</a></p></li>
@@ -166,7 +166,7 @@ const NotFound = () => {
         <h5>10. Do We Make Updates To This Notice?</h5>
 
         <p><i><b>In Short:</b> Yes, we will update this notice as necessary to stay compliant with relevant laws.</i></p>
-        <p>We may update this privacy notice from time to time. The updated version will be indicated by an updated 'Revised' date and the updated version will be effective as soon as it is accessible. If we make material changes to this privacy notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.</p>
+        <p>We may update this privacy notice from time to time. The updated version will be indicated by an updated &apos;Revised&apos; date and the updated version will be effective as soon as it is accessible. If we make material changes to this privacy notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.</p>
       </section>
 
       <section className={styles.section} id="contact">
@@ -183,7 +183,7 @@ const NotFound = () => {
         <h5>12. How Can You Review, Update, Or Delete The Data We Collect From You?</h5>
 
         <p>Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it. To request to review, update, or delete your personal information, please fill out and submit a <a href="https://app.termly.io/notify/87d9d273-60b7-4557-a014-2604f397621c">data subject access request</a>.</p>
-        <p>This privacy policy was created using Termly's <a href="https://termly.io/products/privacy-policy-generator/">Privacy Policy Generator</a>.</p>
+        <p>This privacy policy was created using Termly&apos;s <a href="https://termly.io/products/privacy-policy-generator/">Privacy Policy Generator</a>.</p>
       </section>
     </main>
   )

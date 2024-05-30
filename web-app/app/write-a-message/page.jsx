@@ -15,7 +15,7 @@ const WriteAMessage = () => {
       <Banner image="V4ssJV22Mv" short title="Write A Message" />
 
       <section className={styles.panel}>
-        <p>Write a message of hope for someone struggling with their mental health. Your message could be the one that makes a difference in someone's life. Messages of Hope collects messages of hope and spreads them far and wide. Keep an eye on our social media pages to see if your message is shared.</p>
+        <p>Write a message of hope for someone struggling with their mental health. Your message could be the one that makes a difference in someone&apos;s life. Messages of Hope collects messages of hope and spreads them far and wide. Keep an eye on our social media pages to see if your message is shared.</p>
         
         <MessageSubmission/>
       </section>

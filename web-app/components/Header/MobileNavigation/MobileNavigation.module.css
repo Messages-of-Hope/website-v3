@@ -2,7 +2,7 @@
 .section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 0;
   width: 100%;
@@ -11,7 +11,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  min-height: 280px;
+  overflow: scroll;
+}
+
+.section .logo {
+  width: 80%;
+  height: auto;
+  max-width: 15rem;
+  object-fit: cover;
 }
 
 .nav {
@@ -20,15 +27,9 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  /* padding-top: 6rem; */
   padding-right: 12%;
   padding-left: 8%;
-  /* padding-bottom: 6rem; */
-  margin: auto;
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-  height: 100%;
-  overflow-y: scroll;
+  margin: 15lvh auto 2rem auto;
 }
 
 .nav li {
@@ -72,89 +73,4 @@
   width: 1rem;
   height: 1rem;
   margin-right: 0.4rem;
-}
-
-.art {
-  max-width: 10rem;
-  z-index: 10;
-}
-
-.cir_1 {
-  position: absolute;
-  aspect-ratio: 1/1;
-  width: 40%;
-  top: -3rem;
-  left: -2.5rem;
-  transform: rotate(-30deg);
-}
-
-.cir_2 {
-  position: absolute;
-  aspect-ratio: 1/1;
-  width: 37.5%;
-  bottom: -3rem;
-}
-
-.cir_3 {
-  position: absolute;
-  aspect-ratio: 1/1;
-  width: 40%;
-  top: 3rem;
-  right: -2.5rem;
-  transform: rotate(-30deg);
-}
-
-.cir_4 {
-  position: absolute;
-  aspect-ratio: 1/1;
-  width: 35%;
-  bottom: -1rem;
-  left: -2.5rem;
-  transform: rotate(-30deg);
-}
-
-.cir_5 {
-  position: absolute;
-  aspect-ratio: 1/1;
-  width: 35%;
-  bottom: 2rem;
-  right: -2.5rem;
-  transform: rotate(-210deg);
-}
-
-@media (orientation: landscape) {
-
-  .nav {
-    justify-content: flex-start;
-    margin: 0 auto;
-    width: 100%;
-    height: fit-content;
-    padding-left: 25%;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    padding-right: 15%;
-    /* height: 100lvh; */
-    overflow-y: scroll;
-  }
-
-  .nav li {
-    margin: 0.5rem 0;
-  }
-
-  .sub_nav {
-    padding-left: 1.5rem;
-  }
-
-  .sub_nav li {
-    margin: 0.3rem 0;
-  }
-
-  .cir_2 {
-    display: none;
-  }
-
-  .cir_5 {
-    bottom: -3.5rem;
-  }
-
 }

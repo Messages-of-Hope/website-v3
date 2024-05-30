@@ -51,7 +51,7 @@ def set_headers():
     Dealing with preflight requests.
     """
     headers = { 
-        'Access-Control-Allow-Origin': '*', 
+        'Access-Control-Allow-Origin': os.environ['ALLOWED_ORIGIN'],
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, UPDATE, OPTIONS', 
         'Access-Control-Allow-Headers': 'Content-Type' 
     } 

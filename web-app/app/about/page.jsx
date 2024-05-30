@@ -32,7 +32,7 @@ const About = () => {
 
       <ImagePanel wide blue right image="zhdPwKuWQJ" altText="Speaker Box dancing at the Connections 2024 event">
         <h3>What We Do</h3>
-        <p>As a community organisation, Messages of Hope is committed to improving individuals' mental health and well-being throughout England and Wales. We actively support patients arriving at hospitals for psychiatric admissions, ensuring they receive essential items and compassionate care through our Bags of Hope project.</p>
+        <p>As a community organisation, Messages of Hope is committed to improving individuals&apos; mental health and well-being throughout England and Wales. We actively support patients arriving at hospitals for psychiatric admissions, ensuring they receive essential items and compassionate care through our Bags of Hope project.</p>
         <p>We organise and run various projects throughout the year, each designed to connect communities through creativity and collective empathy. Our initiatives include collaborative art pieces, video projects for mental health awareness days, and public displays of messages of hope. These efforts uplift those in need and foster a sense of unity and support within the community.</p>
         <p>Visit our projects page to learn more about the diverse work Messages of Hope undertakes and how you can get involved in spreading positivity and hope.</p>
         <Button className={styles.button} colour="yellow" link="/projects" text="All Our Projects" />

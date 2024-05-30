@@ -12,7 +12,7 @@ if [ "$RUN_ENV" == "dev" ] || [ "$RUN_ENV" == "\"dev\"" ]; then
   exit 0;
 fi
 if [ "$RUN_ENV" == "prod" ] || [ "$RUN_ENV" == "\"prod\"" ]; then
-  waitress-serve --port="$BACKEND_PORT" app:app;
+  waitress-serve --port="$BACKEND_PORT" --threads=6 app:app;
   exit 0;
 fi
 

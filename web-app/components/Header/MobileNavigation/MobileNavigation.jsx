@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import styles from "./MobileNavigation.module.css";
 import Link from "next/link";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faChevronRight, faUser } from "@fortawesome/free-solid-svg-icons";
 import CircleArt from "@/components/CircleArt/CircleArt";
@@ -8,12 +9,6 @@ import CircleArt from "@/components/CircleArt/CircleArt";
 const MobileNavigation = ({ projects, closeNav }) => {
   return (
     <section className={styles.section}>
-      <CircleArt className={`${styles.art} ${styles.cir_1}`} />
-      <CircleArt className={`${styles.art} ${styles.cir_2}`} />
-      <CircleArt className={`${styles.art} ${styles.cir_3}`} />
-      <CircleArt className={`${styles.art} ${styles.cir_4}`} />
-      <CircleArt className={`${styles.art} ${styles.cir_5}`} />
-
       <ul className={styles.nav}>
         <li>
           <Link href="/" onClick={closeNav}>
@@ -50,39 +45,10 @@ const MobileNavigation = ({ projects, closeNav }) => {
         </li>
 
         <li>
-          {
-            projects !== null ? (
-              <Fragment>
-                <p>
-                  Projects
-                  <FontAwesomeIcon icon={faChevronRight} className={styles.icon_chevron}/>
-                </p>
-                <ul className={styles.sub_nav}>
-                  {projects.map((project, index) => {
-                    return (
-                      <li key={index}>
-                        <Link href={project.url}>
-                          {project.title}
-                          <FontAwesomeIcon icon={faArrowRight} className={styles.icon_arrow}/>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                  <li>
-                    <Link href="/projects" onClick={closeNav}>
-                      All Projects
-                      <FontAwesomeIcon icon={faArrowRight} className={styles.icon_arrow}/>
-                    </Link>
-                  </li>
-                </ul>
-              </Fragment>
-            ) : (
-              <Link href="/projects" onClick={closeNav}>
-                Projects
-                <FontAwesomeIcon icon={faArrowRight} className={styles.icon_arrow}/>
-              </Link>
-            )
-          }
+          <Link href="/projects" onClick={closeNav}>
+            Projects
+            <FontAwesomeIcon icon={faArrowRight} className={styles.icon_arrow}/>
+          </Link>
         </li>
 
         <li>
@@ -108,6 +74,8 @@ const MobileNavigation = ({ projects, closeNav }) => {
         </li>
 
       </ul>
+
+      <Image className={styles.logo} src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/pF3vE95CRd`} alt="Messages of Hope Logo" width={300} height={300}/>
     </section>
   );
 };

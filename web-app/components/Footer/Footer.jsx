@@ -47,13 +47,13 @@ const Footer = () => {
         <a className={styles.desktop} href="/privacy-policy" target="_blank">privacy policy</a>
 
         <div className={styles.social_icons}>
-          <a className={styles.social} href="mailto:contact@messagesofhope.co.uk">
+          <a className={styles.social} href="mailto:contact@messagesofhope.co.uk" target="_blank">
             <FontAwesomeIcon className={styles.icon} icon={faEnvelope} />
           </a>
-          <a className={styles.social} href="https://www.instagram.com/messagesof.hope/">
+          <a className={styles.social} href="https://www.instagram.com/messagesof.hope/" target="_blank">
             <FontAwesomeIcon className={styles.icon} icon={faInstagram} />
           </a>
-          <a className={styles.social} href="https://www.facebook.com/people/Messages-of-Hope/100087952429971/">
+          <a className={styles.social} href="https://www.facebook.com/people/Messages-of-Hope/100087952429971/" target="_blank">
             <FontAwesomeIcon className={styles.icon} icon={faFacebookF} />
           </a>
         </div>
