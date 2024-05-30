@@ -8,10 +8,6 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
-
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
-
 // Page metadata
 export const metadata = {
   title: {
@@ -28,6 +24,9 @@ export const metadata = {
     telephone: false,
   }
 };
+
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 const RootLayout = ({ children }) => {
   return (

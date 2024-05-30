@@ -13,10 +13,15 @@ import MessagePanel from "@/components/MessagePanel/MessagePanel";
 import Accordion from "@/components/Accordion/Accordion";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 
+export const metadata = {
+  title: "Messages of Hope 2023",
+  description: "The Messages of Hope 2023 event at Barry Island was centred around a transformative collaborative art project that saw over 200 heartfelt messages collected and countless inspiring and empowering conversations shared."
+}
+
 const MessagesOfHope2023 = () => {
   return (
     <main className={styles.main}>
-      <Banner image="V4ssJV22Mv" short title="Messages of Hope 2023" />
+      <Banner image="591zjjboIe" short title="Messages of Hope 2023" />
     
       <section className={styles.panel}>
         <div className={styles.images}>
@@ -24,10 +29,9 @@ const MessagesOfHope2023 = () => {
           <Image className={styles.yellow} src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/Ut7HH9AXP4`} alt="Painted rocks with messages written on them" width={800} height={800} />
         </div>
         <div className={styles.text}>
-          <p>On the 29th July 2023 Messages of Hope hosted a collaborative art project at Barry Island. The event was a huge success. We collected over 200 messages and had too many inspiring and empowering conversations to count. Both adults and children left their mark in the form of hopeful messages on our pre-prepared canvases.</p>
-          <p>In addition to writing on canvases, members of the public were able to write messages of hope on pebbles and take a mindful break at our colouring station.</p>
-          <p>We are so grateful for everyone that supported this campaign and we are excited to share all of your messages.</p>
-          <p>Spot the finsihed canvases at the Barry YMCA in The Vale of Glamorgan.</p>
+          <p>On the 29th of July 2023, Messages of Hope hosted a transformative collaborative art project at Barry Island, which turned out to be a resounding success. The event saw an overwhelming outpouring of support, with over 200 heartfelt messages collected and countless inspiring and empowering conversations shared. People of all ages, from children to adults, left their marks on pre-prepared canvases, filling them with messages of hope and encouragement.</p>
+          <p>Beyond the canvases, attendees had the opportunity to write their messages on pebbles, adding a unique touch to the project. A dedicated colouring station provided a space for mindfulness and creativity, allowing participants to take a peaceful break and express their hopes through art.</p>
+          <p>We are immensely grateful to everyone who supported and participated in this campaign. Your contributions have created a tapestry of hope that we are excited to share with the broader community. You can view the finished canvases at the Barry YMCA in The Vale of Glamorgan, a testament to the collective spirit of hope and resilience.</p>
         </div>
       </section>
 

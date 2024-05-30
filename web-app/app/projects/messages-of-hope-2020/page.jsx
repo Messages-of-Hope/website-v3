@@ -13,12 +13,17 @@ import MessagePanel from "@/components/MessagePanel/MessagePanel";
 import Accordion from "@/components/Accordion/Accordion";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 
+export const metadata = {
+  title: "Messages of Hope 2020",
+  description: "Messages of Hope 2020 was the first campaign created by Messages of Hope. Learn more about the campaign and watch the video."
+}
+
 const MessagesOfHope2020 = () => {
   return (
     <main className={styles.main}>
       <Banner image="V4ssJV22Mv" short title="Messages of Hope 2020" />
     
-      <ImagePanel wide right image="AA6lgpnyoV" altText="Two young people holding a whiteboard that says 'You're loved'">
+      <ImagePanel wide right image="zrsECJjlTf" altText="A photographer taking a photo of someone holding a whiteboard with a message of hope">
         <p>2020 was the year in which Messages of Hope was created. I was twenty years old and had been struggling with my mental health for a long time. I was extremely passionate about mental health advocacy and desperately wanted to think of a way to give hope to others. At this point in my mental health journey, I had not yet been diagnosed with Borderline Personality Disorder but the symptoms of this illness were beginning to seep into my life.</p>
         <p>I had just moved home to South Wales after dropping out of my second year of university because my mental health was severly impacting my studies, when the idea of Messages of Hope came to me.</p>
         <p>In 2020 I collected 200 messages in a week. I displayed all of these messages on a mural that I created in my kitchen, recorded a video of the me creating the mural and tried to share as many of the messages as I could.</p>

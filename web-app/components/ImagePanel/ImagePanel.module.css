@@ -85,6 +85,7 @@
     object-fit: cover;
     border: var(--sunshine-yellow) 12px solid;
     border-bottom-right-radius: 90px;
+    aspect-ratio: 1/1.5;
   }
 
   .blue .image img {

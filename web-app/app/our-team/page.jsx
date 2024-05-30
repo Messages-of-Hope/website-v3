@@ -1,8 +1,10 @@
 import React from "react";
-import Banner from "@/components/Banner/Banner.jsx";
-import styles from "./style.module.css";
 import Image from "next/image";
+
+import Banner from "@/components/Banner/Banner.jsx";
 import ContactForm from "@/components/ContactForm/ContactForm";
+
+import styles from "./style.module.css";
 
 export const metadata = {
   title: "Our Team",

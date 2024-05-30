@@ -4,13 +4,18 @@ import Banner from "@/components/Banner/Banner";
 import MessagePanel from "@/components/MessagePanel/MessagePanel";
 import MessageSubmission from "@/components/MessageSubmission/MessageSubmission";
 
+export const metadata = {
+  title: "Write A Message",
+  description: "Write a message of hope to share with the world. Messages of Hope collects messages of hope and spreads them far and wide."
+}
+
 const WriteAMessage = () => {
   return (
     <main>
       <Banner image="V4ssJV22Mv" short title="Write A Message" />
 
       <section className={styles.panel}>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Write a message of hope for someone struggling with their mental health. Your message could be the one that makes a difference in someone's life. Messages of Hope collects messages of hope and spreads them far and wide. Keep an eye on our social media pages to see if your message is shared.</p>
         
         <MessageSubmission/>
       </section>

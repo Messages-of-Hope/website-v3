@@ -18,35 +18,11 @@ const Accordion = ({ title, data }) => {
           return (
             <article key={index} className={styles.item}>
               <h6 className={styles.heading}>{item.title}</h6>
-              <p>{item.description}</p>
+              <p>{item.description[0]}</p>
             </article>
           );
         })}
       </section>
-
-      {/* Vertical Accordion */}
-      {/* <section className={styles.v_accordion}>
-        <h3 className={styles.title}>{title}</h3>
-        {data.map((item, index) => {
-          return (
-            <article key={index} className={`${styles.item} ${current == index ? styles.open : ""}`} onClick={() => {setCurrent(index)}}>
-              <div className={styles.top_bar} />
-
-              <h6 className={styles.heading}>
-                {item.title}
-                <FontAwesomeIcon icon={faPlus} className={styles.icon}/>
-              </h6>
-              <div className={styles.expandable}>
-                <p>{item.description}</p>
-                <p>{item.description_2}</p>
-                <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/${item.image}`} alt={item.altText} width={900} height={900}/>
-              </div>
-
-              <div className={styles.bottom_bar} />
-            </article>
-          );
-        })}
-      </section> */}
 
       {/* Horizontal Accordion */}
       <section className={styles.container}>
@@ -65,8 +41,8 @@ const Accordion = ({ title, data }) => {
                     <div className={styles.text}>
                       <h3 className={styles.title}>{title}</h3>
                       <h5 className={styles.heading}>{item.title}</h5>
-                      <p>{item.description}</p>
-                      <p>{item.description_2}</p>
+                      <p>{item.description[0]}</p>
+                      <p>{item.description[1]}</p>
                     </div>
                     <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/${item.image}`} alt={item.altText} width={900} height={900}/>
                   </div>
