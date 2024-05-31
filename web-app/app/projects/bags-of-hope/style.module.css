@@ -1,14 +1,14 @@
 
-.main h3 {
+.title {
   width: 100%;
 }
 
-.main p {
+.text {
   width: 100%;
   margin: 0.5rem 0;
 }
 
-.main p a {
+.text a {
   color: var(--deep-ocean-blue);
 }
 
@@ -21,7 +21,6 @@
   width: 100%;
   background: var(--deep-ocean-blue);
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 1.5rem auto;
@@ -58,24 +57,7 @@
   font-size: 6rem;
 }
 
-.ward_panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--sunshine-yellow);
-  margin: 1.5rem auto;
-  padding: 2rem 0;
-}
-
-.ward_panel p {
-  width: 90%;
-  margin: 0 auto;
-  max-width: 70rem;
-}
-
 @media (min-width: 48rem) {
-  .ward_panel,
   .stats_panel {
     margin: 3.5rem auto;
   }

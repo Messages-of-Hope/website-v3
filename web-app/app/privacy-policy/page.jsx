@@ -4,17 +4,19 @@ import Banner from "@/components/_Layout/Banner/Banner";
 
 import styles from "./style.module.css";
 
+
 export const metadata = {
   title: "Privacy Policy",
   description: "I'm not sure how you got here, but this page doesn't exist.",
-}
+};
+
 
 const NotFound = () => {
   return (
     <main>
       <Banner short title="Privacy Policy" image="V4ssJV22Mv"/>
 
-      <p className={styles.date}><b>Last updated December 21, 2023</b></p>
+      <p className={styles.last_updated}><b>Last updated December 21, 2023</b></p>
 
       <section className={styles.section}>
         <p>This privacy notice for Messages of Hope (MOH) C.I.C (&apos;<b>we</b>&apos;, &apos;<b>us</b>&apos;, or &apos;<b>our</b>&apos;), describes how and why we might collect, store, use, and/or share ( &apos;<b>process</b>&apos;) your information when you use our services (&apos;<b>Services</b>&apos;), such as when you:</p>
@@ -41,7 +43,7 @@ const NotFound = () => {
       <section className={styles.section} id="toc">
         <h5>Table of Contents</h5>
         <nav>
-          <ul className={styles.ul}>
+          <ul>
             <li><p><a href="#infocollect">1. What Information Do We Collect?</a></p></li>
             <li><p><a href="#infouse">2. How Do We Process Your Information?</a></p></li>
             <li><p><a href="#legalbases">3. What Legal Bases Do We Rely On To Process Your Information?</a></p></li>
@@ -186,6 +188,6 @@ const NotFound = () => {
         <p>This privacy policy was created using Termly&apos;s <a href="https://termly.io/products/privacy-policy-generator/">Privacy Policy Generator</a>.</p>
       </section>
     </main>
-  )
+  );
 };
 export default NotFound;

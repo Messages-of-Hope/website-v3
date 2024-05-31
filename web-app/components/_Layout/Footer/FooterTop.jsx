@@ -2,6 +2,7 @@ import React from "react";
 
 import styles from "./FooterTop.module.css";
 
+
 const FooterTop = () => {
   return (
     <svg className={styles.border} data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 16" preserveAspectRatio="none">

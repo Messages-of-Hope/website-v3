@@ -134,6 +134,8 @@
 .mobile img {
   height: 3rem;
   width: auto;
+  position: relative;
+  z-index: 25;
 }
 
 .hamburger {

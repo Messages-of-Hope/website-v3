@@ -5,6 +5,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./Button.module.css";
 
+
 const Button = ({ id, className, link, text, colour, target }) => {
   const classes = `${styles.button} ${className} ${colour ? styles[colour] : ""}`;
 

@@ -1,4 +1,4 @@
-.date {
+.last_updated {
   margin: 2rem auto;
   width: 90%;
 }
@@ -8,10 +8,10 @@
   width: 90%;
 }
 
-.section p {
-  margin: 1rem auto;
+.section ul {
+  list-style: none;
 }
 
-.ul {
-  list-style: none;
+.section p {
+  margin: 1rem auto;
 }

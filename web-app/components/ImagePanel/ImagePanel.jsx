@@ -1,7 +1,10 @@
 import React from "react";
 import Image from "next/image";
+
+import CircleArt from "@/components/ImagePanel/CircleArt/CircleArt.jsx";
+
 import styles from "./ImagePanel.module.css";
-import CircleArt from "@/components/ImagePanel/CircleArt/CircleArt";
+
 
 const ImagePanel = ({ image, altText, children, wide, blue, right }) => {
   return (

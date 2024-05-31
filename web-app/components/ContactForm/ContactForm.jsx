@@ -3,8 +3,11 @@
 import React, { useEffect, useRef, useState, Fragment } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
+import Popup from "@/components/ContactForm/Popup/Popup.jsx";
+
 import styles from "./ContactForm.module.css";
-import Popup from "@/components/ContactForm/Popup/Popup";
+
 
 const ContactForm = ({ title, text }) => {
   const [status, setStatus] = useState(null);
@@ -14,6 +17,23 @@ const ContactForm = ({ title, text }) => {
   const subjectRef = useRef();
   const messageRef = useRef();
 
+  /**
+   * Clear the form fields when the email is sent successfully.
+   */
+  useEffect(() => {
+    if (status === null || status === "error") return;
+
+    nameRef.current.value = "";
+    emailRef.current.value = "";
+    organisationRef.current.value = "";
+    subjectRef.current.value = "";
+    messageRef.current.value = "";
+  }, [status]);
+
+  /**
+   * Send a POST request to the server to send an email.
+   * @param {*} event The form submission event
+   */
   const sendEmail = async (event) => {
     event.preventDefault();
     const send = async () => {
@@ -40,16 +60,9 @@ const ContactForm = ({ title, text }) => {
     }
   };
 
-  useEffect(() => {
-    if (status === null || status === "error") return;
-
-    nameRef.current.value = "";
-    emailRef.current.value = "";
-    organisationRef.current.value = "";
-    subjectRef.current.value = "";
-    messageRef.current.value = "";
-  }, [status]);
-
+  /**
+   * Close the popup.
+   */
   const closePopup = () => {
     setStatus(null);
   }

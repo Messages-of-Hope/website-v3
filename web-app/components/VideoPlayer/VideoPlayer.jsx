@@ -1,18 +1,26 @@
 "use client";
 
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
+
 import styles from "./VideoPlayer.module.css";
 
-const VideoPlayer = ({ title, url, bslUrl, thumbnail, className }) => {
+
+const VideoPlayer = ({ url, bslUrl, thumbnail, className }) => {
   const [showVideo, setShowVideo] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [showBSL, setShowBSL] = useState(false);
 
+  /**
+   * Show the video when the component is mounted.
+   */
   useEffect(() => {
     setShowVideo(true);
   }, []);
 
+  /**
+   * Toggle between the video and BSL video.
+   */
   const handleBsl = () => {
     setShowBSL(!showBSL);
   };

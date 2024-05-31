@@ -1,9 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
-import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
-
 import Banner from "@/components/_Layout/Banner/Banner.jsx";
+import VideoPlayer from "@/components/VideoPlayer/VideoPlayer.jsx";
 
 import styles from "./style.module.css";
 
@@ -11,7 +10,8 @@ import styles from "./style.module.css";
 export const metadata = {
   title: "Connections 2024",
   description: "Connections 2024 is a poignant short film created by Messages of Hope, delving into the transformative power of connection amidst mental health struggles. Through capturing the heartfelt messages penned by Londoners, the film illuminates the profound sense of empathy and solidarity within our communities."
-}
+};
+
 
 const Connections2024 = () => {
   return (

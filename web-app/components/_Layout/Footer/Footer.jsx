@@ -1,16 +1,22 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import styles from "./Footer.module.css";
-import FooterTop from "./FooterTop";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+
 import Button from "@/components/Button/Button";
+import FooterTop from "./FooterTop";
+
+import styles from "./Footer.module.css";
+
 
 const Footer = () => {
   const [project, setProject] = useState("/projects");
 
+  /**
+   * Fetch the latest project from the backend when component loads.
+   */
   useEffect(() => {
     const getProject = async () => {
       try {

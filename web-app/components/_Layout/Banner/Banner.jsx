@@ -1,7 +1,9 @@
 import React from "react";
 
-import BottomBorder from "./BottomBorder";
+import BottomBorder from "./BottomBorder.jsx";
+
 import styles from "./Banner.module.css";
+
 
 const Banner = ({ title, image, children, short, minimal }) => {
   const imageUrl = `${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/images/${image}`;

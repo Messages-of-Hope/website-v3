@@ -1,85 +1,26 @@
 "use client";
 
 import React, { useEffect, useState, useRef, Fragment } from "react";
-import styles from "./Header.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faUser } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import MobileNavigation from "./MobileNavigation/MobileNavigation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight, faUser } from "@fortawesome/free-solid-svg-icons";
+
+import MobileNavigation from "./MobileNavigation/MobileNavigation.jsx";
+
+import styles from "./Header.module.css";
+
 
 const Header = () => {
+  const router = useRouter();
   const [projects, setProjects] = useState(null);
   const [dropdown, setDropdown] = useState(null);
   const [showMobileNav, setShowMobileNav] = useState(false);
-  const router = useRouter();
   const headerRef = useRef();
 
-  const onAboutClick = () => {
-    if (dropdown !== "about") {
-      headerRef.current.classList.add(styles.interact);
-      headerRef.current.classList.add(styles.about);
-      if (dropdown === "projects") {
-        headerRef.current.classList.remove(styles.projects);
-      }
-    } else {
-      headerRef.current.classList.remove(styles.about);
-      headerRef.current.classList.remove(styles.interact);
-    }
-
-    setDropdown(dropdown === "about" ? null : "about");
-  }
-
-  const onProjectClick = () => {
-    if (projects === null) {
-      router.push("/projects");
-      return;
-    }
-    
-    if (dropdown !== "projects") {
-      headerRef.current.classList.add(styles.interact);
-      headerRef.current.classList.add(styles.projects);
-      if (dropdown === "about") {
-        headerRef.current.classList.remove(styles.about);
-      }
-    } else {
-      headerRef.current.classList.remove(styles.projects);
-      headerRef.current.classList.remove(styles.interact);
-    }
-
-    setDropdown(dropdown === "projects" ? null : "projects");
-  }
-
-  const closeDropdown = (e) => {
-    if (e.type !== "scroll") {
-      if (!e.target || typeof e.target.className !== 'string') return;
-      if (e.target.className && (e.target.className.split(" ").includes(styles.dropdown) || e.target.className.split(" ").includes("dropdown"))) return;
-    }
-
-    headerRef.current.classList.remove(styles.interact);
-    if (dropdown === "projects")
-      headerRef.current.classList.remove(styles.projects);
-    else if (dropdown === "about")
-      headerRef.current.classList.remove(styles.about);
-
-    setDropdown(null);
-  };
-
-  useEffect(() => {
-    if (dropdown === "projects" || dropdown === "about") {
-      document.addEventListener("click", closeDropdown);
-      window.addEventListener("scroll", closeDropdown);
-    }
-
-    return () => {
-      document.removeEventListener("click", closeDropdown);
-      window.removeEventListener("scroll", closeDropdown);
-    }
-  }, [dropdown]);
-
   /**
-   * Fetch projects from backend
+   * Fetch projects from backend when component loads.
    */
   useEffect(() => {
     const getProjects = async () => {
@@ -101,7 +42,7 @@ const Header = () => {
   }, []);
 
   /**
-   * Add active class to header when user scrolls down
+   * Add active class to header when user scrolls down to colour the header.
    */
   useEffect(() => {
     const scrollFunction = () => {
@@ -117,12 +58,96 @@ const Header = () => {
         }
       }
     }
+    // Call scroll function to check if header should be active on load
     scrollFunction();
+
+    // Add scroll event listener
     window.addEventListener("scroll", scrollFunction, { passive: true });
     return () => {
       window.removeEventListener("scroll", scrollFunction);
     }
   }, []);
+
+  /**
+   * Handle dropdown for about section.
+   */
+  const onAboutClick = () => {
+    if (dropdown !== "about") {
+      // Projects dropdown is open
+      if (dropdown === "projects")
+        headerRef.current.classList.remove(styles.projects);
+      headerRef.current.classList.add(styles.interact);
+      headerRef.current.classList.add(styles.about);
+    } else {
+      // About dropdown is open
+      headerRef.current.classList.remove(styles.about);
+      headerRef.current.classList.remove(styles.interact);
+    }
+
+    setDropdown(dropdown === "about" ? null : "about");
+  }
+
+  /**
+   * Handle dropdown for projects section.
+   */
+  const onProjectClick = () => {
+    // Redirect to projects page if projects are not fetched
+    if (projects === null) {
+      router.push("/projects");
+      return;
+    }
+    
+    if (dropdown !== "projects") {
+      // About dropdown is open
+      if (dropdown === "about")
+        headerRef.current.classList.remove(styles.about);
+      headerRef.current.classList.add(styles.interact);
+      headerRef.current.classList.add(styles.projects);
+    } else {
+      // Projects dropdown is open
+      headerRef.current.classList.remove(styles.projects);
+      headerRef.current.classList.remove(styles.interact);
+    }
+
+    setDropdown(dropdown === "projects" ? null : "projects");
+  }
+
+  /**
+   * Close dropdown when user clicks outside of dropdown.
+   * @param {*} e the event
+   */
+  const closeDropdown = (e) => {
+    // Check if event is not a click or if the target is not a dropdown
+    if (e.type !== "scroll") {
+      if (!e.target || typeof e.target.className !== 'string') return;
+      if (e.target.className && (e.target.className.split(" ").includes(styles.dropdown) || e.target.className.split(" ").includes("dropdown"))) return;
+    }
+
+    // Close dropdown
+    headerRef.current.classList.remove(styles.interact);
+    if (dropdown === "projects")
+      headerRef.current.classList.remove(styles.projects);
+    else if (dropdown === "about")
+      headerRef.current.classList.remove(styles.about);
+
+    setDropdown(null);
+  };
+
+  /**
+   * Add event listeners to close dropdown when user clicks outside of dropdown.
+   */
+  useEffect(() => {
+    if (dropdown === "projects" || dropdown === "about") {
+      document.addEventListener("click", closeDropdown);
+      window.addEventListener("scroll", closeDropdown);
+    }
+
+    return () => {
+      document.removeEventListener("click", closeDropdown);
+      window.removeEventListener("scroll", closeDropdown);
+    }
+  }, [dropdown]);
+  
 
   return (
     <Fragment>
@@ -136,7 +161,7 @@ const Header = () => {
               <span></span>
               <span></span>
             </button>
-            { showMobileNav ? <MobileNavigation projects={projects} closeNav={ () => { setShowMobileNav(false); } }/> : null }
+            { showMobileNav ? <MobileNavigation closeNav={ () => { setShowMobileNav(false); } }/> : null }
           </div>
         </div>
 

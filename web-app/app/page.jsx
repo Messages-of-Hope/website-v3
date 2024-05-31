@@ -112,7 +112,6 @@ const Project = ({ key, title, url, image }) => {
 
 
 const Home = async () => {
-  // Fetch data projects
   const projects = await getProjects();
 
   return (

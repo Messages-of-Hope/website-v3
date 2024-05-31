@@ -1,22 +1,17 @@
 import React from "react";
 import Image from "next/image";
-import { redirect } from "next/navigation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import ProjectCard from "@/components/ProjectCard/ProjectCard.jsx";
+
 import Banner from "@/components/_Layout/Banner/Banner.jsx";
-import Button from "@/components/Button/Button.jsx";
+import MessagePanel from "@/components/MessagePanel/MessagePanel.jsx";
+
 import styles from "./style.module.css";
-import ContactForm from "@/components/ContactForm/ContactForm";
-import ImagePanel from "@/components/ImagePanel/ImagePanel";
-import MessagePanel from "@/components/MessagePanel/MessagePanel";
-import Accordion from "@/components/Accordion/Accordion";
-import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
+
 
 export const metadata = {
   title: "Messages of Hope 2023",
   description: "The Messages of Hope 2023 event at Barry Island was centred around a transformative collaborative art project that saw over 200 heartfelt messages collected and countless inspiring and empowering conversations shared."
-}
+};
+
 
 const MessagesOfHope2023 = () => {
   return (

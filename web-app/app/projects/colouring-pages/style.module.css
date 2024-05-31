@@ -1,5 +1,5 @@
 
-.intro {
+.description {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,18 +9,17 @@
   max-width: 80rem;
 }
 
-.intro p {
+.description p {
   width: 100%;
   margin: 0.5rem 0;
 }
 
-.button {
+.description .button {
   align-self: flex-end;
   margin: 1rem 0;
 }
 
-
-.panel {
+.pages_panel {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,12 +30,12 @@
   flex-wrap: wrap;
 }
 
-.panel a {
+.pages_panel a {
   margin-bottom: 0.5rem;
   width: 100%;
 }
 
-.panel img {
+.pages_panel img {
   width: 100%;
   aspect-ratio: 1/1;
   height: auto;
@@ -44,20 +43,20 @@
 }
 
 @media (orientation: landscape) {
-  .panel {
+  .pages_panel {
     width: 96%;
     max-width: 100rem;
     flex-direction: row;
     justify-content: space-around;
   }
 
-  .panel a {
+  .pages_panel a {
     width: 45%;
   }
 }
 
 @media (min-width: 36rem) {
-  .panel {
+  .pages_panel {
     width: 95%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -65,19 +64,19 @@
     max-width: 100rem;
   }
 
-  .panel a {
+  .pages_panel a {
     width: 100%;
   }
 }
 
 @media (min-width: 48rem) {
-  .panel {
+  .pages_panel {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 75rem) {
-  .panel {
+  .pages_panel {
     grid-template-columns: repeat(4, 1fr);
   }
 }

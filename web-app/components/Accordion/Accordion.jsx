@@ -1,17 +1,19 @@
 "use client";
 
 import React, { useState, Fragment } from "react";
-import styles from "./Accordion.module.css";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+
+import styles from "./Accordion.module.css";
+
 
 const Accordion = ({ title, data }) => {
   const [current, setCurrent] = useState(0);
 
   return (
     <Fragment>
-
+      {/* Vertical Display */}
       <section className={styles.v_display}>
         <h3 className={styles.title}>{title}</h3>
         {data.map((item, index) => {

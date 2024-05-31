@@ -22,7 +22,7 @@
   object-fit: cover;
 }
 
-.panel .form {
+.form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -31,39 +31,33 @@
   margin: 1rem 0;
 }
 
-.panel .form label {
+.form label,
+.form input,
+.form button {
   width: 90%;
   margin: 0.5rem 0;
   font-family: var(--font-body);
   font-size: 1rem;
 }
 
-.panel .form input {
-  width: 90%;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
+.form input,
+.form button {
   border: 2px solid var(--deep-ocean-blue);
   border-radius: 5px;
-  font-family: var(--font-body);
-  font-size: 1rem;
+  padding: 0.5rem;
 }
 
-.panel .form button {
-  width: 90%;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  border: 2px solid var(--deep-ocean-blue);
-  border-radius: 5px;
+.form button {
+  margin-top: 1.5rem;
   background: var(--deep-ocean-blue);
   color: var(--glacier-white);
-  font-family: var(--font-body);
-  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s, color 0.3s;
-  margin-top: 1.5rem;
 }
 
-.panel .form button:hover {
+.form button:hover,
+.form button:focus,
+.form button:active {
   background: var(--glacier-white);
   color: var(--deep-ocean-blue);
 }

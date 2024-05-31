@@ -1,13 +1,17 @@
 import React from "react";
+
+import Banner from "@/components/_Layout/Banner/Banner.jsx";
+import MessagePanel from "@/components/MessagePanel/MessagePanel.jsx";
+import MessageSubmission from "@/components/MessageSubmission/MessageSubmission.jsx";
+
 import styles from "./style.module.css";
-import Banner from "@/components/_Layout/Banner/Banner";
-import MessagePanel from "@/components/MessagePanel/MessagePanel";
-import MessageSubmission from "@/components/MessageSubmission/MessageSubmission";
+
 
 export const metadata = {
   title: "Write A Message",
   description: "Write a message of hope to share with the world. Messages of Hope collects messages of hope and spreads them far and wide."
-}
+};
+
 
 const WriteAMessage = () => {
   return (

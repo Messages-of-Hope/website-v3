@@ -34,8 +34,9 @@
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.1rem;
   transition: transform 0.2s;
+  min-width: 10rem;
 }
 
 .button:hover {
