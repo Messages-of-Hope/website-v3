@@ -1,6 +1,7 @@
 GET_COLOURING_PAGES = "SELECT * FROM colouring_pages WHERE visible=1 ORDER BY downloads DESC;"
 INCREMENT_DOWNLOADS = "UPDATE colouring_pages SET downloads = downloads + 1 WHERE id=%s;"
 
+
 def colouring_page_array_to_dict(arr):
     """
     Converts a colouring page array into a dictionary.
@@ -9,6 +10,7 @@ def colouring_page_array_to_dict(arr):
         "id": arr[0],
         "title": arr[1],
     }
+
 
 def get_colouring_pages(conn):
     """
@@ -20,6 +22,7 @@ def get_colouring_pages(conn):
     conn.commit()
     cursor.close()
     return colouring_pages
+
 
 def update_downloads(conn, colouring_page):
     """

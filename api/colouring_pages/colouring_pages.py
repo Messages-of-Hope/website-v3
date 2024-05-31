@@ -1,17 +1,19 @@
-import colouring_pages.colouring_pages_db as colouring_pages_db
-from flask import Blueprint, Response, g, jsonify, request, send_file, make_response
-from flask_cors import CORS
 import os
+from flask import Blueprint, g, jsonify, send_file, make_response
+from flask_cors import CORS
+
+import colouring_pages.colouring_pages_db as colouring_pages_db
+
 
 colouring_pages_blueprint = Blueprint("colouring-pages", __name__)
 CORS(colouring_pages_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
+
 
 @colouring_pages_blueprint.route("/", methods=["GET"])
 def get_colouring_pages():
     """
     Get a list of colouring pages.
     """
-
     try:
         colouring_pages = colouring_pages_db.get_colouring_pages(g.conn)
     except Exception as e:
@@ -22,20 +24,19 @@ def get_colouring_pages():
         )
 
     return (
-        jsonify(
-            {
-                "status": 200,
-                "msg": "Messages retrieved successfully.",
-                "colouring_pages": colouring_pages
-            }
-        ),
-        200,
+        jsonify({
+            "status": 200,
+            "msg": "Messages retrieved successfully.",
+            "colouring_pages": colouring_pages
+        }), 200,
     )
+
 
 @colouring_pages_blueprint.route("/<colouring_page>", methods=["GET"])
 def get_colouring_page(colouring_page):
     """
     Get a colouring page using a unique colouring page id.
+    Send the image as a response.
     """
     path = f"../dbimg/colouring-pages/Colouring Page {colouring_page}.png"
     if os.path.exists(path):
@@ -50,6 +51,7 @@ def get_colouring_page(colouring_page):
 def download_colouring_page(colouring_page):
     """
     Download a colouring page using a unique colouring page id.
+    Send the image as a response and update the download count.
     """
     path = f"../dbimg/colouring-pages/Colouring Page {colouring_page}.png"
     if os.path.exists(path):

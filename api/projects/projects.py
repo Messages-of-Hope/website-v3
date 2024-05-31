@@ -1,10 +1,13 @@
-import os
-import projects.projects_db as projects_db
-from flask import Blueprint, Response, g, jsonify, request
+from flask import Blueprint, g, jsonify, request
 from flask_cors import CORS
+import os
+
+import projects.projects_db as projects_db
+
 
 projects_blueprint = Blueprint("projects", __name__)
 CORS(projects_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
+
 
 @projects_blueprint.route("/", methods=["GET"])
 def get_projects_summary():
@@ -30,13 +33,8 @@ def get_projects_summary():
             500,
         )
 
-    return (
-        jsonify(
-            {
-                "status": 200,
-                "msg": "Messages retrieved successfully.",
-                "projects": projects_summary,
-            }
-        ),
-        200,
-    )
+    return (jsonify({
+        "status": 200,
+        "msg": "Messages retrieved successfully.",
+        "projects": projects_summary,
+    }), 200)

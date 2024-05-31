@@ -1,13 +1,16 @@
+from flask import Blueprint, g, jsonify, request
+from flask_cors import CORS
 import binascii
 import os
 import random
 import bcrypt
+
 import users.users_db as users_db
-from flask import Blueprint, Response, g, jsonify, request
-from flask_cors import CORS
+
 
 users_blueprint = Blueprint("users", __name__)
 CORS(users_blueprint, origins=[os.environ["ALLOWED_ORIGIN"]])
+
 
 @users_blueprint.route("/login/", methods=["POST"])
 def login():

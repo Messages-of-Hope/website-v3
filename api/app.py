@@ -1,13 +1,14 @@
-import os
-import redis
 from flask import Flask, g, request, jsonify
 from flask_cors import CORS
 from flask_mail import Mail, Message
+from psycopg2.pool import ThreadedConnectionPool
+import os
+import redis
+
 from projects.projects import projects_blueprint
 from messages.messages import messages_blueprint
 from images.images import images_blueprint
 from colouring_pages.colouring_pages import colouring_pages_blueprint
-from psycopg2.pool import ThreadedConnectionPool
 
 
 # Create the top-level Flask app
@@ -90,7 +91,7 @@ def release_connection(exception):
         app.conn_pool.putconn(g.conn)
 
 
-@app.route("/send-email/", methods=["POST"])
+@app.route("/send-email", methods=["POST"])
 def send_email():
     """
     Sends an email to the specified email address.

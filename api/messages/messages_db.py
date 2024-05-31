@@ -1,9 +1,11 @@
 import datetime
 
+
 GET_RANDOM_MESSAGE_SET = (
     "SELECT * FROM messages WHERE public=1 ORDER BY RANDOM() LIMIT %s;"
 )
 INSERT_MESSAGE = "INSERT INTO messages (message, date, category, sourced, public, used) VALUES (%s, %s, %s, %s, %s, %s);"
+
 
 def message_array_to_string(arr):
     """
@@ -22,6 +24,7 @@ def get_random_message_set(conn, set_size):
     conn.commit()
     cursor.close()
     return mess
+
 
 def insert_message(conn, message, category, sourced, public, used):
     """
