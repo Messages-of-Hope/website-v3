@@ -14,7 +14,7 @@ const Footer = () => {
   useEffect(() => {
     const getProject = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ADDR}/projects`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/projects`);
         const data = await response.json();
         setProject(data.projects[0].url);
       } catch (err) { }
@@ -33,12 +33,12 @@ const Footer = () => {
         </div>
     
         <div className={styles.mobile}>
-          <a href="https://documents.messagesofhope.co.uk/privacy-policy" target="_blank">privacy policy</a>
+          <a href="/privacy-policy" target="_blank">privacy policy</a>
           <p>© 2024 Messages of Hope</p>
         </div>
 
         <div className={styles.buttons}>
-          <Button colour="blue" link="/write-a-messaage" text="Write a Message"/>
+          <Button colour="blue" link="/write-a-message" text="Write a Message"/>
           <Button colour="yellow" link={project} text="Our Latest Project"/> 
         </div>
       </div>

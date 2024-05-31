@@ -1,12 +1,14 @@
 import React from "react";
 
+
+// Global CSS
 import "@/fonts/fonts.css";
 import "@/app/global.css";
-
 // Font Awesome Config
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false
+
 
 // Page metadata
 export const metadata = {
@@ -25,16 +27,17 @@ export const metadata = {
   }
 };
 
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
+
+import Header from "@/components/_Layout/Header/Header.jsx";
+import Footer from "@/components/_Layout/Footer/Footer.jsx";
 
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <Header/>
+        <Header />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

@@ -1,8 +1,10 @@
 import os
 from flask import Blueprint, Response, jsonify, send_file
+from flask_cors import CORS
+
 
 images_blueprint = Blueprint("images", __name__)
-
+CORS(images_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
 
 @images_blueprint.after_request
 def after_request(response: Response):

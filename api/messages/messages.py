@@ -1,9 +1,10 @@
 import messages.messages_db as messages_db
 from flask import Blueprint, Response, g, jsonify, request
 from flask_cors import CORS
+import os
 
 messages_blueprint = Blueprint("messages", __name__)
-CORS(messages_blueprint)
+CORS(messages_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
 
 
 @messages_blueprint.route("/", methods=["GET", "POST"])

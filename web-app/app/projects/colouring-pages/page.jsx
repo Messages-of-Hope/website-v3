@@ -1,25 +1,43 @@
 import React from "react";
 import Image from "next/image";
-import { redirect } from "next/navigation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import ProjectCard from "@/components/ProjectCard/ProjectCard.jsx";
-import Banner from "@/components/Banner/Banner.jsx";
+import Banner from "@/components/_Layout/Banner/Banner.jsx";
 import Button from "@/components/Button/Button.jsx";
 import styles from "./style.module.css";
-import ContactForm from "@/components/ContactForm/ContactForm";
-import ImagePanel from "@/components/ImagePanel/ImagePanel";
-import MessagePanel from "@/components/MessagePanel/MessagePanel";
-import Accordion from "@/components/Accordion/Accordion";
-import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
-import ColouringPagesPanel from "@/components/ColouringPagesPanel/ColouringPagesPanel";
 
 export const metadata = {
   title: "Colouring Pages",
   description: "Messages of Hope provides free colouring pages to help spread hope and positivity. Download and print our colouring pages to share your creativity with us."
 }
 
-const ColouringPages = () => {
+const fetchColouringPages = async () => {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/colouring-pages`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      cache: "no-store"
+    });
+    if (!response.ok)
+      throw new Error("Failed to fetch pages");
+    return await response.json();
+  } catch (err) {
+    return null;
+  }
+};
+
+const ColouringPageLink = ({ page }) => {
+  return (
+    <a href={`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/colouring-pages/download/${page.id}`} download={`${page.title}.png`}>
+      <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/colouring-pages/${page.id}`} alt={page.title} width={800} height={800} />
+    </a>
+  );
+};
+
+const ColouringPages = async () => {
+  // Fetch data projects
+  const pages = await fetchColouringPages();
+
   return (
     <main>
       <Banner image="V4ssJV22Mv" short title="Colouring Pages" />
@@ -30,7 +48,13 @@ const ColouringPages = () => {
         <Button className={styles.button} colour="blue" link="/support-us" text="Colouring Book"/>
       </section>
 
-      <ColouringPagesPanel />
+      <section className={styles.panel}>
+        { pages ? pages.colouring_pages.map((page, i) => (
+            <ColouringPageLink key={i} page={page} />
+          )) :
+          <p>There are no colouring pages available at this time. Please check back later.</p>
+        }
+      </section>
     </main>
   );
 };

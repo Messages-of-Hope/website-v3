@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 
-import Banner from "@/components/Banner/Banner.jsx";
+import Banner from "@/components/_Layout/Banner/Banner.jsx";
 
 import styles from "./style.module.css";
 
@@ -90,15 +90,15 @@ const Connections2024 = () => {
       </section>
 
       <section className={styles.image_gallery}>
-        <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/bl4m2UPETa`} alt="A mother and daughter holding a message of hope written in French" width={300} height={300}/>
-        <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/5CnpFGoOdE`} alt="The Speaker Box group holding a whiteboard saying 'If you want to dance in the street, dance in the street!'" width={300} height={300}/>
-        <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/uNbak2l7po`} alt="A dog next to a whiteboard that says 'Woof woof'" width={300} height={300}/>
-        <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/H7cLgJSMml`} alt="A man in a sloth costume holding a whiteboard that says 'Keep going, everything will be okay :)'" width={300} height={300}/>
-        <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/CdTHi5Z0WZ`} alt="Bethan Evans holding a whiteboard that says 'One day someone is going to need to hear your story.'" width={300} height={300}/>
-        <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/2KlsLHgJsO`} alt="A father and daughter writing inside a heart on a whiteboard" width={300} height={300}/>
-        <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/IkyP20lYFw`} alt="A family holding a sign with a smiley face and Christmas tree on it" width={300} height={300}/>
-        <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/PtSSYegxG0`} alt="Two people working to film the Connections 2024 short video" width={300} height={300}/>
-        <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/90m1s9J70V`} alt="Two young people writing on a whiteboard" width={300} height={300}/>
+        <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/bl4m2UPETa`} alt="A mother and daughter holding a message of hope written in French" width={300} height={300}/>
+        <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/5CnpFGoOdE`} alt="The Speaker Box group holding a whiteboard saying 'If you want to dance in the street, dance in the street!'" width={300} height={300}/>
+        <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/uNbak2l7po`} alt="A dog next to a whiteboard that says 'Woof woof'" width={300} height={300}/>
+        <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/H7cLgJSMml`} alt="A man in a sloth costume holding a whiteboard that says 'Keep going, everything will be okay :)'" width={300} height={300}/>
+        <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/CdTHi5Z0WZ`} alt="Bethan Evans holding a whiteboard that says 'One day someone is going to need to hear your story.'" width={300} height={300}/>
+        <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/2KlsLHgJsO`} alt="A father and daughter writing inside a heart on a whiteboard" width={300} height={300}/>
+        <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/IkyP20lYFw`} alt="A family holding a sign with a smiley face and Christmas tree on it" width={300} height={300}/>
+        <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/PtSSYegxG0`} alt="Two people working to film the Connections 2024 short video" width={300} height={300}/>
+        <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/90m1s9J70V`} alt="Two young people writing on a whiteboard" width={300} height={300}/>
       </section>
     </main>
   );

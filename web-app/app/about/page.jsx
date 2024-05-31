@@ -2,7 +2,7 @@ import React from "react";
 
 import Button from "@/components/Button/Button.jsx";
 
-import Banner from "@/components/Banner/Banner.jsx";
+import Banner from "@/components/_Layout/Banner/Banner.jsx";
 import ImagePanel from "@/components/ImagePanel/ImagePanel";
 import MessagePanel from "@/components/MessagePanel/MessagePanel";
 

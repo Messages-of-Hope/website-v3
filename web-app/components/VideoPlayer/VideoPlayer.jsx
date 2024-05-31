@@ -26,7 +26,7 @@ const VideoPlayer = ({ title, url, bslUrl, thumbnail, className }) => {
         height="100%"
         url={showBSL ? bslUrl : url}
         controls={true}
-        light={`${process.env.NEXT_PUBLIC_BACKEND_ADDR}/images/${thumbnail}`}
+        light={`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/images/${thumbnail}`}
         pip={true}
         onClickPreview={() => setPlaying(true)}
         playing={playing}

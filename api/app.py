@@ -12,10 +12,11 @@ from psycopg2.pool import ThreadedConnectionPool
 
 # Create the top-level Flask app
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 
 # Create a connection pool to the database
-database_url = f"postgresql://{os.environ['POSTGRES_USERNAME']}:{os.environ['POSTGRES_PASSWORD']}@postgres-server:5432/{os.environ['POSTGRES_DATABASE']}"
+database_url = f"postgresql://{os.environ['POSTGRES_USERNAME']}:{os.environ['POSTGRES_PASSWORD']}@moh-web3-postgres:5432/{os.environ['POSTGRES_DATABASE']}"
 app.conn_pool = ThreadedConnectionPool(os.environ["MIN_POOL_SIZE"], os.environ["MAX_POOL_SIZE"], database_url)
 
 
@@ -41,7 +42,7 @@ mail = Mail(app)
 # Setup cross-origin resource sharing
 # See https://flask-cors.readthedocs.io/en/3.0.7/
 # https://flask-cors.corydolphin.com/en/latest/api.html#using-cors-with-blueprints
-CORS(app)
+CORS(app, origins=[ os.environ["ALLOWED_ORIGIN"] ])
 
 
 @app.before_request 
@@ -51,7 +52,7 @@ def set_headers():
     Dealing with preflight requests.
     """
     headers = { 
-        'Access-Control-Allow-Origin': os.environ['ALLOWED_ORIGIN'],
+        'Access-Control-Allow-Origin': os.environ["ALLOWED_ORIGIN"],
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, UPDATE, OPTIONS', 
         'Access-Control-Allow-Headers': 'Content-Type' 
     } 
@@ -89,7 +90,7 @@ def release_connection(exception):
         app.conn_pool.putconn(g.conn)
 
 
-@app.route("/send-email", methods=["POST"])
+@app.route("/send-email/", methods=["POST"])
 def send_email():
     """
     Sends an email to the specified email address.

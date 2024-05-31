@@ -1,9 +1,10 @@
+import os
 import projects.projects_db as projects_db
 from flask import Blueprint, Response, g, jsonify, request
 from flask_cors import CORS
 
 projects_blueprint = Blueprint("projects", __name__)
-CORS(projects_blueprint)
+CORS(projects_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
 
 @projects_blueprint.route("/", methods=["GET"])
 def get_projects_summary():

@@ -4,7 +4,7 @@ from flask_cors import CORS
 import os
 
 colouring_pages_blueprint = Blueprint("colouring-pages", __name__)
-CORS(colouring_pages_blueprint)
+CORS(colouring_pages_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
 
 @colouring_pages_blueprint.route("/", methods=["GET"])
 def get_colouring_pages():
@@ -45,10 +45,17 @@ def get_colouring_page(colouring_page):
         return response
     return jsonify({"status": 404, "msg": "Failed to find image."}), 404
 
-@colouring_pages_blueprint.route("/download/<colouring_page>", methods=["POST"])
+
+@colouring_pages_blueprint.route("/download/<colouring_page>", methods=["GET"])
 def download_colouring_page(colouring_page):
     """
     Download a colouring page using a unique colouring page id.
     """
-    colouring_pages_db.update_downloads(g.conn, colouring_page)
-    return jsonify({"status": 200, "msg": "Download count updated."}), 200
+    path = f"../dbimg/colouring-pages/Colouring Page {colouring_page}.png"
+    if os.path.exists(path):
+        colouring_pages_db.update_downloads(g.conn, colouring_page)
+        response = make_response(send_file(path))
+        response.headers["Content-Type"] = "image/png"
+        response.headers["Content-Disposition"] = f"attachment; filename=Colouring Page {colouring_page}.png"
+        return response
+    return jsonify({"status": 404, "msg": "Failed to find image."}), 404

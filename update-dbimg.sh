@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Destroy docker container
-docker-compose down
+docker compose down
 
 # Pull new db image
 rm -rf dbimg

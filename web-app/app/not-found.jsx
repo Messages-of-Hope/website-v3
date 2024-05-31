@@ -1,21 +1,18 @@
 import React from "react";
-
-import Banner from "@/components/Banner/Banner";
-
+import Banner from "@/components/_Layout/Banner/Banner";
 import styles from "./style.module.css";
 
-export const metadata = {
-  title: "404 Page Not Found",
-  description: "I'm not sure how you got here, but this page doesn't exist.",
-}
+
+export const metadata = { title: "404 Page Not Found" }
+
 
 const NotFound = () => {
   return (
     <main>
-      <Banner short image="/write-a-message/banner.jpg"/>
+      <Banner short/>
 
-      <h1 className={`heading ${styles.heading404}`}>404 Page Not Found</h1>
-      <p className={`body ${styles.body404}`}>I&apos;m not sure how you got here, but this page doesn&apos;t exist.</p>
+      <h1 className={styles.title_404}>404 Page Not Found</h1>
+      <p className={styles.body_404}>I&apos;m not sure how you got here, but this page doesn&apos;t exist.</p>
     </main>
   )
 };

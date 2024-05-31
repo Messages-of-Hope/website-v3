@@ -1,10 +1,10 @@
 import React from "react";
-import Banner from "@/components/Banner/Banner.jsx";
+import Banner from "@/components/_Layout/Banner/Banner.jsx";
 import styles from "./style.module.css";
 import Image from "next/image";
 import MessagePanel from "@/components/MessagePanel/MessagePanel";
 import Button from "@/components/Button/Button";
-import CircleArt from "@/components/CircleArt/CircleArt";
+import CircleArt from "@/components/ImagePanel/CircleArt/CircleArt";
 
 export const metadata = {
   title: "Our Creator",

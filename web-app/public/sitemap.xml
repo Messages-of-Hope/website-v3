@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+<url>
+  <loc>https://www.messagesofhope.co.uk/</loc>
+  <lastmod>2024-05-30T19:35:33+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.messagesofhope.co.uk/write-a-message</loc>
+  <lastmod>2024-05-30T19:35:33+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.messagesofhope.co.uk/support-us</loc>
+  <lastmod>2024-05-30T19:35:33+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.messagesofhope.co.uk/about</loc>
+  <lastmod>2024-05-30T19:35:33+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.messagesofhope.co.uk/projects</loc>
+  <lastmod>2024-05-30T19:35:33+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.messagesofhope.co.uk/projects/bags-of-hope</loc>
+  <lastmod>2024-05-30T19:35:33+00:00</lastmod>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://www.messagesofhope.co.uk/projects/connections-2024</loc>
+  <lastmod>2024-05-30T19:35:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.messagesofhope.co.uk/projects/colouring-pages</loc>
+  <lastmod>2024-05-30T19:35:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.messagesofhope.co.uk/our-team</loc>
+  <lastmod>2024-05-30T19:35:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.messagesofhope.co.uk/our-creator</loc>
+  <lastmod>2024-05-30T19:35:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.messagesofhope.co.uk/projects/messages-of-hope-2023</loc>
+  <lastmod>2024-05-30T19:35:33+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://www.messagesofhope.co.uk/projects/messages-of-hope-2020</loc>
+  <lastmod>2024-05-30T19:35:33+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+
+
+</urlset>

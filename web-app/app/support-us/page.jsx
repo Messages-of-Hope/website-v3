@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import ProjectCard from "@/components/ProjectCard/ProjectCard.jsx";
-import Banner from "@/components/Banner/Banner.jsx";
+import Banner from "@/components/_Layout/Banner/Banner.jsx";
 import Button from "@/components/Button/Button.jsx";
 import styles from "./style.module.css";
 import ContactForm from "@/components/ContactForm/ContactForm";

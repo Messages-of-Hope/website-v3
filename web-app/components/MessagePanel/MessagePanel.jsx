@@ -39,7 +39,7 @@ const MessagePanel = ({ className }) => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ADDR}/messages`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/messages`);
         const data = await response.json();
         if (response.ok) {
           setMessages(data.messages);

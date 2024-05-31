@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState, Fragment } from "react";
 import styles from "./MessageSubmission.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import Popup from "@/components/Popup/Popup";
+import Popup from "@/components/MessageSubmission/Popup/Popup";
 
 const MessageSubmission = () => {
   const [status, setStatus] = useState(null);
@@ -13,7 +13,7 @@ const MessageSubmission = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const send = async () => {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ADDR}/messages`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/messages`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import Button from "@/components/Button/Button.jsx";
-import ProjectCard from "@/components/ProjectCard/ProjectCard.jsx";
 
-import Banner from "@/components/Banner/Banner.jsx";
+import Banner from "@/components/_Layout/Banner/Banner.jsx";
 import ImagePanel from "@/components/ImagePanel/ImagePanel";
 import Accordion from "@/components/Accordion/Accordion";
 import ContactForm from "@/components/ContactForm/ContactForm";
@@ -16,13 +16,13 @@ import MessagePanel from "@/components/MessagePanel/MessagePanel";
 import styles from "./style.module.css";
 
 
-const aboutPoints = [
+const ABOUT_POINTS = [
   "Support people struggling with their mental health.",
   "Spread hope.",
   "Prevent suicide.",
   "Encourage conversations around mental health."
 ];
-const whatWeDoPoints = [
+const WHAT_WE_DO_POINTS = [
   {
     "title": "Collaborative Art Projects",
     "description": [
@@ -59,15 +59,23 @@ const whatWeDoPoints = [
     "image": "61i9PiBRIV",
     "altText": "Two young writing messages of hope on a whiteboard"
   }
-]
+];
+
+export const metadata = {
+  title: {
+    "absolute": "Messages of Hope"
+  },
+  description: "Messages of Hope is a Community Interest Company encouraging people to write hopeful messages for those struggling with mental health. These messages become stickers and Instagram posts spread across the UK, aiming to improve mental health and support psychiatric patients.",
+}
+
 
 /**
- * Fetch the projects from the backend
- * @returns {Promise} The projects
+ * Retrieve the top 5 projects from the backend for the home page projects panel.
+ * @returns {Object} The top 5 projects from the backend.
  */
 const getProjects = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/projects?total=5`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/projects?total=5`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -82,14 +90,34 @@ const getProjects = async () => {
   }
 }
 
+
+const Project = ({ key, title, url, image }) => {
+  return (
+    <Link
+      key={key}
+      href={url}
+      className={styles.card}
+      style={{ background: `linear-gradient(0deg, rgba(152,211,231,0.3) 0%, rgba(152,211,231,0.15) 55%, rgba(152,211,231,0) 100%),
+                            url("${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/images/${image}") center/cover no-repeat, 
+                            var(--glacier-white)` }}>
+      <div className={styles.content}>
+        <h5>
+          {title}
+          <FontAwesomeIcon icon={faArrowRight} className={styles.icon}/>
+        </h5>
+      </div>
+    </Link>
+  );
+};
+
+
 const Home = async () => {
   // Fetch data projects
   const projects = await getProjects();
-  if (!projects || projects.status !== 200)
-    redirect("/not-found");
 
   return (
     <main>
+      {/* Banner */}
       <Banner image="V4ssJV22Mv">
         <div className={styles.banner_content}>
           <h4>Collecting your messages of hope and spreading them far and wide.</h4>
@@ -106,7 +134,7 @@ const Home = async () => {
         <p className={styles.about_text}>Messages of Hope is a Community Interest Company encouraging people to write hopeful messages for those struggling with mental health. These messages become stickers and Instagram posts spread across the UK, aiming to improve mental health and support psychiatric patients.</p>
         <p className={styles.about_text}>Messages of Hope is a Community Interest Company that was created to...</p>
         <ul className={styles.about_points}>
-          {aboutPoints.map((point, index) => 
+          {ABOUT_POINTS.map((point, index) => 
             <li key={index} className={`${styles.about_point} ${styles.body}`}>
               <FontAwesomeIcon icon={faCheck} className={styles.icon}/>
               {point}
@@ -116,23 +144,30 @@ const Home = async () => {
       </ImagePanel>
 
       {/* What We Do */}
-      <Accordion title="What We Do" data={whatWeDoPoints}/>
+      <Accordion title="What We Do" data={WHAT_WE_DO_POINTS}/>
 
-      <section className={styles.projects_panel}>
-        <h3>Projects</h3>
-        <div className={styles.project_list}>
-          {projects.projects.map((project, index) =>
-            <ProjectCard key={index} url={project.url} title={project.title} image={project.thumbnail}/>
-          )}
-          <ProjectCard url="/projects" title="View All Projects" image="1nxfPI6QBa"/>
-          <div className={styles.projects_image}>
-            <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/srlnEmEMeq`} alt="A group of yound people wearing the Messages of Hope merchandise" width={962} height={457}/>
+      {/* Projects */}
+      {
+        projects ?
+        <section className={styles.projects_panel}>
+          <h3>Projects</h3>
+          <div className={styles.project_list}>
+            {projects.projects.map((project, index) =>
+              <Project key={index} url={project.url} title={project.title} image={project.thumbnail}/>
+            )}
+            <Project url="/projects" title="View All Projects" image="1nxfPI6QBa"/>
+            <div className={styles.projects_image}>
+              <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/srlnEmEMeq`} alt="A group of yound people wearing the Messages of Hope merchandise" width={962} height={457}/>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+        : null
+      }
 
+      {/* Contact Us */}
       <ContactForm title="Contact Us" text="Messages of Hope welcomes collaborations with other businesses, organisations, charities, projects, schools and communities. If you're interested in hosting a Messages of Hope project or would like to collaborate with us in any capacity we would love to hear from you." />
 
+      {/* Message Panel */}
       <MessagePanel/>
     </main>
   );

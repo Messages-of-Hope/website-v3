@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faChevronRight, faUser } from "@fortawesome/free-solid-svg-icons";
-import CircleArt from "@/components/CircleArt/CircleArt";
+import CircleArt from "@/components/ImagePanel/CircleArt/CircleArt";
 
 const MobileNavigation = ({ projects, closeNav }) => {
   return (
@@ -75,7 +75,7 @@ const MobileNavigation = ({ projects, closeNav }) => {
 
       </ul>
 
-      <Image className={styles.logo} src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/pF3vE95CRd`} alt="Messages of Hope Logo" width={300} height={300}/>
+      <Image className={styles.logo} src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/pF3vE95CRd`} alt="Messages of Hope Logo" width={300} height={300}/>
     </section>
   );
 };

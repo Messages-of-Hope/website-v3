@@ -2,14 +2,14 @@ version: "3"
 
 services:
 
-  redis-server:
+  moh-web3-redis:
     image: "redis:7"
-    container_name: "redis-server"
+    container_name: "moh-web3-redis"
     restart: always
 
-  postgres-server:
+  moh-web3-postgres:
     image: "postgres:16.2"
-    container_name: "postgres-server"
+    container_name: "moh-web3-postgres"
     volumes:
       - "./dbimg/data:/var/lib/postgresql/data"
     restart: always
@@ -18,9 +18,9 @@ services:
     env_file:
       - .env
 
-  nextjs-server:
+  moh-web3-nextjs:
     image: "node:20"
-    container_name: "nextjs-server"
+    container_name: "moh-web3-nextjs"
     entrypoint: "/bin/bash"
     command: "/workspace/web-app/startup.sh"
     volumes:
@@ -31,9 +31,9 @@ services:
     env_file:
       - .env
 
-  flask-server:
+  moh-web3-flask:
     image: "python:3.11"
-    container_name: "flask-server"
+    container_name: "moh-web3-flask"
     entrypoint: "/bin/bash"
     command: "/workspace/api/startup.sh"
     volumes:

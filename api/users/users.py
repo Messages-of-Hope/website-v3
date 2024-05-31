@@ -4,30 +4,12 @@ import random
 import bcrypt
 import users.users_db as users_db
 from flask import Blueprint, Response, g, jsonify, request
+from flask_cors import CORS
 
 users_blueprint = Blueprint("users", __name__)
+CORS(users_blueprint, origins=[os.environ["ALLOWED_ORIGIN"]])
 
-
-@users_blueprint.after_request
-def after_request(response: Response):
-    """
-    Adds headers to the response to allow CORS.
-    """
-    header = response.headers
-
-    ALLOWED_ORIGINS = [os.environ["FRONTEND_ADDR"]]
-    origin = request.headers.get("Origin")
-    if origin in ALLOWED_ORIGINS:
-        response.headers["Access-Control-Allow-Origin"] = origin
-
-    header["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
-    header["Access-Control-Allow-Headers"] = "Content-Type"
-    header["Access-Control-Allow-Credentials"] = "true"
-
-    return response
-
-
-@users_blueprint.route("/login", methods=["POST"])
+@users_blueprint.route("/login/", methods=["POST"])
 def login():
     """
     Log in a user by comparing the given username and password to the database.

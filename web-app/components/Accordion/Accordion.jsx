@@ -44,7 +44,7 @@ const Accordion = ({ title, data }) => {
                       <p>{item.description[0]}</p>
                       <p>{item.description[1]}</p>
                     </div>
-                    <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/${item.image}`} alt={item.altText} width={900} height={900}/>
+                    <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/${item.image}`} alt={item.altText} width={900} height={900}/>
                   </div>
                 </article>
               );

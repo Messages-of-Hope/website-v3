@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./style.module.css";
-import Banner from "@/components/Banner/Banner";
+import Banner from "@/components/_Layout/Banner/Banner";
 import MessagePanel from "@/components/MessagePanel/MessagePanel";
 import MessageSubmission from "@/components/MessageSubmission/MessageSubmission";
 

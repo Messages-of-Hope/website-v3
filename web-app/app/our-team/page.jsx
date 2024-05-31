@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import Banner from "@/components/Banner/Banner.jsx";
+import Banner from "@/components/_Layout/Banner/Banner.jsx";
 import ContactForm from "@/components/ContactForm/ContactForm";
 
 import styles from "./style.module.css";
@@ -41,7 +41,7 @@ const OurTeam = () => {
         {
           team.map((member, index) => (
             <article key={index} className={styles.member}>
-              <Image src={`${process.env.NEXT_PUBLIC_INTERNAL_BACKEND_ADDR}/images/${member.image}`} alt={member.name} width="300" height="300"/>
+              <Image src={`${process.env.NEXT_PUBLIC_SERVER_BACKEND_ADDR}/images/${member.image}`} alt={member.name} width="300" height="300"/>
               <div className={styles.text}>
                 <h4>{member.name}</h4>
                 <h6>{member.role}</h6>

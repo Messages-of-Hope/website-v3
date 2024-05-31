@@ -1,13 +1,10 @@
 import React from "react";
-import Banner from "@/components/Banner/Banner.jsx";
+import Banner from "@/components/_Layout/Banner/Banner.jsx";
 import styles from "./style.module.css";
 import Image from "next/image";
 import MessagePanel from "@/components/MessagePanel/MessagePanel";
 import Button from "@/components/Button/Button";
-import CircleArt from "@/components/CircleArt/CircleArt";
-import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import ImagePanel from "@/components/ImagePanel/ImagePanel";
-import InstagramFeed from "@/components/InstagramFeed/InstagramFeed";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping, faSocks, faHospital } from "@fortawesome/free-solid-svg-icons";
 

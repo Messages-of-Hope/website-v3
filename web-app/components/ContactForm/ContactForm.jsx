@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState, Fragment } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import styles from "./ContactForm.module.css";
-import Popup from "@/components/Popup/Popup";
+import Popup from "@/components/ContactForm/Popup/Popup";
 
 const ContactForm = ({ title, text }) => {
   const [status, setStatus] = useState(null);
@@ -17,7 +17,7 @@ const ContactForm = ({ title, text }) => {
   const sendEmail = async (event) => {
     event.preventDefault();
     const send = async () => {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ADDR}/send-email`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
