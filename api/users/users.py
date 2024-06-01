@@ -9,10 +9,9 @@ import users.users_db as users_db
 
 
 users_blueprint = Blueprint("users", __name__)
-CORS(users_blueprint, origins=[os.environ["ALLOWED_ORIGIN"]])
 
 
-@users_blueprint.route("/login/", methods=["POST"])
+@users_blueprint.route("/login", methods=["POST"])
 def login():
     """
     Log in a user by comparing the given username and password to the database.
@@ -41,25 +40,83 @@ def login():
                 random.randint(411, 420),
             )
 
-        api_token = binascii.hexlify(os.urandom(32)).decode()
+        api_token = f"{binascii.hexlify(os.urandom(32)).decode()}_{request.remote_addr}"
         g.red.set(username, api_token)
         g.red.expire(username, 1800)
 
         response = jsonify(
             {"status": 200, "msg": "Login successful", "username": username}
         )
-        response.set_cookie(
-            "moh_username",
-            username,
-            httponly=True,
-            domain=os.environ["BACKEND_ADDR"],
-        )
-        response.set_cookie(
-            "moh_token",
-            api_token,
-            httponly=True,
-            domain=os.environ["BACKEND_ADDR"],
-        )
+        if os.environ["RUN_ENV"] == "dev":
+            response.set_cookie(
+                os.environ["USERNAME_TOKEN"],
+                username,
+                domain=os.environ["TOKEN_ADDR"]
+            )
+            response.set_cookie(
+                os.environ["ACCESS_TOKEN"],
+                api_token,
+                domain=os.environ["TOKEN_ADDR"]
+            )
+        else:
+            response.set_cookie(
+                os.environ["USERNAME_TOKEN"],
+                username,
+                httponly=True,
+                secure=True,
+                samesite="Strict",
+                domain=os.environ["TOKEN_ADDR"],
+                path="/api"
+            )
+            response.set_cookie(
+                os.environ["ACCESS_TOKEN"],
+                api_token,
+                httponly=True,
+                secure=True,
+                samesite="Strict",
+                domain=os.environ["TOKEN_ADDR"],
+                path="/api"
+            )
         return response, 200
     except Exception as e:
+        print(e, flush=True)
+        return (jsonify({"status": 500, "msg": "Failed to access database."}), 500)
+
+
+def verify_cookie(request):
+    """
+    Verifies the user's cookie.
+    """
+    try:
+        username = request.cookies[os.environ["USERNAME_TOKEN"]]
+        api_token = request.cookies[os.environ["ACCESS_TOKEN"]]
+    except Exception as e:
+        return False
+
+    try:
+        if g.red.get(username) == api_token:
+            g.red.expire(username, 1800)
+            return True
+        else:
+            return False
+    except Exception as e:
+        print(e, flush=True)
+        return False
+
+
+@users_blueprint.route("/logout", methods=["POST"])
+def logout():
+    """
+    Log out a user by deleting their api key.
+    """
+    if not verify_cookie(request):
+        return (jsonify({"status": 401, "msg": "Unauthorised"}), 401)    
+
+    username = request.cookies[os.environ["USERNAME_TOKEN"]]
+
+    try:
+        g.red.delete(username)
+        return jsonify({"status": 200, "msg": "Logout successful"}), 200
+    except Exception as e:
+        print(e, flush=True)
         return (jsonify({"status": 500, "msg": "Failed to access database."}), 500)

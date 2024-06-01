@@ -1,0 +1,50 @@
+
+.admin_console {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto 2rem auto;
+  width: 95%;
+  max-width: 110rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 100%;
+  margin: 0.5rem 0 1rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--deep-ocean-blue);
+}
+
+.menu button,
+.menu a {
+  margin: 0 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--coal-black);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.menu button:hover,
+.menu a:hover {
+  color: var(--deep-ocean-blue);
+  transform: scale(1.05);
+}
+
+.menu button.active,
+.menu a.active {
+  color: var(--deep-ocean-blue);
+  transform: scale(1.05);
+  cursor: default;
+  border-bottom: 2px solid var(--deep-ocean-blue);
+}

@@ -6,7 +6,7 @@ import messages.messages_db as messages_db
 
 
 messages_blueprint = Blueprint("messages", __name__)
-CORS(messages_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
+# CORS(messages_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
 
 
 def save_message(request):

@@ -4,14 +4,14 @@ import { redirect } from "next/navigation";
 import Redis from "ioredis";
 
 import Banner from "@/components/_Layout/Banner/Banner.jsx";
-import LoginForm from "@/components/AdminConsole/LoginForm/LoginForm.jsx";
+import AdminConsole from "@/components/AdminConsole/AdminConsole.jsx";
 
 import styles from "./style.module.css";
 
 
 export const metadata = {
-  title: "Login",
-  description: "Login to your Messages of Hope account to access your profile and more."
+  title: "Console",
+  description: "Messages of Hope Admin Console",
 };
 
 
@@ -40,7 +40,7 @@ const checkAuth = async (cookieStore, ip) => {
   }
 };
 
-const Login = async () => {
+const Console = async () => {
   const cookieStore = cookies();
   
   const FALLBACK_IP = "0.0.0.0";
@@ -53,15 +53,15 @@ const Login = async () => {
   }
 
   const auth = await checkAuth(cookieStore, ip);
-  if (auth)
-    redirect("/console");
+  if (!auth)
+    redirect("/login");
 
   return (
     <main className={styles.main}>
-      <Banner image="V4ssJV22Mv" short />
+      <Banner image="V4ssJV22Mv" title="Admin Console" short />
 
-      <LoginForm />
+      <AdminConsole />
     </main>
   );
 };
-export default Login;
+export default Console;

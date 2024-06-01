@@ -6,7 +6,7 @@ import colouring_pages.colouring_pages_db as colouring_pages_db
 
 
 colouring_pages_blueprint = Blueprint("colouring-pages", __name__)
-CORS(colouring_pages_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
+# CORS(colouring_pages_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
 
 
 @colouring_pages_blueprint.route("/", methods=["GET"])

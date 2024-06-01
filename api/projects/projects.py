@@ -6,7 +6,7 @@ import projects.projects_db as projects_db
 
 
 projects_blueprint = Blueprint("projects", __name__)
-CORS(projects_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
+# CORS(projects_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
 
 
 @projects_blueprint.route("/", methods=["GET"])

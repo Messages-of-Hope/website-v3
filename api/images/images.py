@@ -4,7 +4,7 @@ import os
 
 
 images_blueprint = Blueprint("images", __name__)
-CORS(images_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
+# CORS(images_blueprint, origins=[ os.environ["ALLOWED_ORIGIN"] ])
 
 
 @images_blueprint.route("/<image_id>", methods=["GET"])

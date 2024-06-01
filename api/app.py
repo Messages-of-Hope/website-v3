@@ -9,6 +9,7 @@ from projects.projects import projects_blueprint
 from messages.messages import messages_blueprint
 from images.images import images_blueprint
 from colouring_pages.colouring_pages import colouring_pages_blueprint
+from users.users import users_blueprint
 
 
 # Create the top-level Flask app
@@ -26,6 +27,7 @@ app.register_blueprint(images_blueprint, url_prefix="/images")
 app.register_blueprint(projects_blueprint, url_prefix="/projects")
 app.register_blueprint(messages_blueprint, url_prefix="/messages")
 app.register_blueprint(colouring_pages_blueprint, url_prefix="/colouring-pages")
+app.register_blueprint(users_blueprint, url_prefix="/users")
 
 
 # Setup email sending
@@ -43,7 +45,7 @@ mail = Mail(app)
 # Setup cross-origin resource sharing
 # See https://flask-cors.readthedocs.io/en/3.0.7/
 # https://flask-cors.corydolphin.com/en/latest/api.html#using-cors-with-blueprints
-CORS(app, origins=[ os.environ["ALLOWED_ORIGIN"] ])
+# CORS(app, origins=[ os.environ["ALLOWED_ORIGIN"] ])
 
 
 @app.before_request 
@@ -55,10 +57,23 @@ def set_headers():
     headers = { 
         'Access-Control-Allow-Origin': os.environ["ALLOWED_ORIGIN"],
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, UPDATE, OPTIONS', 
-        'Access-Control-Allow-Headers': 'Content-Type' 
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Credentials': 'true'
     } 
     if request.method == 'OPTIONS' or request.method == 'options': 
         return jsonify(headers), 200
+
+
+@app.after_request
+def after_request(response):
+    """
+    Adds headers to the response to allow CORS.
+    """
+    response.headers.add('Access-Control-Allow-Origin', os.environ["ALLOWED_ORIGIN"])
+    response.headers.add('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, UPDATE, OPTIONS')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+    response.headers.add('Access-Control-Allow-Credentials', 'true')
+    return response
 
 
 @app.before_request
@@ -68,7 +83,7 @@ def connect_to_db():
     """
     try:
         if "red" not in g:
-            g.red = redis.Redis(host="redis-server", port=6379, decode_responses=True)
+            g.red = redis.Redis(host="moh-web3-redis", port=6379, decode_responses=True)
         if "conn" not in g:
             g.conn = app.conn_pool.getconn()
             g.conn.cursor().execute("SELECT 1")
