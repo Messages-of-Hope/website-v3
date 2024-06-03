@@ -1,15 +1,16 @@
 from flask import Flask, g, request, jsonify
 from flask_cors import CORS
-from flask_mail import Mail, Message
+from flask_mail import Mail
 from psycopg2.pool import ThreadedConnectionPool
 import os
 import redis
 
-from projects.projects import projects_blueprint
-from messages.messages import messages_blueprint
+from auth.auth import auth_blueprint
+from colouring.colouring import colouring_blueprint
 from images.images import images_blueprint
-from colouring_pages.colouring_pages import colouring_pages_blueprint
-from users.users import users_blueprint
+from mail.mail import mail_blueprint
+from messages.messages import messages_blueprint
+from projects.projects import projects_blueprint
 
 
 # Create the top-level Flask app
@@ -23,11 +24,12 @@ app.conn_pool = ThreadedConnectionPool(os.environ["MIN_POOL_SIZE"], os.environ["
 
 
 # Register blueprints for the different parts of the API
+app.register_blueprint(auth_blueprint)
+app.register_blueprint(colouring_blueprint, url_prefix="/colouring")
+app.register_blueprint(mail_blueprint, url_prefix="/mail")
 app.register_blueprint(images_blueprint, url_prefix="/images")
-app.register_blueprint(projects_blueprint, url_prefix="/projects")
 app.register_blueprint(messages_blueprint, url_prefix="/messages")
-app.register_blueprint(colouring_pages_blueprint, url_prefix="/colouring-pages")
-app.register_blueprint(users_blueprint, url_prefix="/users")
+app.register_blueprint(projects_blueprint, url_prefix="/projects")
 
 
 # Setup email sending
@@ -42,41 +44,33 @@ app.config.update(dict(
 mail = Mail(app)
 
 
-# Setup cross-origin resource sharing
-# See https://flask-cors.readthedocs.io/en/3.0.7/
-# https://flask-cors.corydolphin.com/en/latest/api.html#using-cors-with-blueprints
-# CORS(app, origins=[ os.environ["ALLOWED_ORIGIN"] ])
-
-
-@app.before_request 
-def set_headers():
+def check_origin():
     """
-    Adds headers to the response to allow CORS.
-    Dealing with preflight requests.
+    Checks if the origin is allowed.
     """
-    headers = { 
-        'Access-Control-Allow-Origin': os.environ["ALLOWED_ORIGIN"],
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, UPDATE, OPTIONS', 
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Credentials': 'true'
-    } 
-    if request.method == 'OPTIONS' or request.method == 'options': 
-        return jsonify(headers), 200
+    if os.environ["RUN_ENV"] == "dev":
+        return True
+
+    origin = request.headers.get("Origin")
+    if origin is not None:
+        return request.headers.get("Origin") == os.environ["ALLOWED_ORIGIN"]
+    # If the origin is not set, it is likely a local request
+    return True
 
 
-@app.after_request
-def after_request(response):
+def allow_origin_preflight():
     """
     Adds headers to the response to allow CORS.
     """
-    response.headers.add('Access-Control-Allow-Origin', os.environ["ALLOWED_ORIGIN"])
-    response.headers.add('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, UPDATE, OPTIONS')
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
-    response.headers.add('Access-Control-Allow-Credentials', 'true')
-    return response
+    headers = {
+        "Access-Control-Allow-Origin": os.environ["ALLOWED_ORIGIN"],
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, UPDATE, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Credentials": "true"
+    }
+    return jsonify(headers), 200
+    
 
-
-@app.before_request
 def connect_to_db():
     """
     Initialises/re-establishes the database connection using the connection pool.
@@ -97,8 +91,25 @@ def connect_to_db():
         g.conn = app.conn_pool.getconn()
 
 
-@app.teardown_request
-def release_connection(exception):
+def add_mail_to_g():
+    """
+    Adds the mail object to the global object.
+    """
+    g.mail = mail
+
+
+def add_headers(response):
+    """
+    Adds headers to the response to allow CORS.
+    """
+    response.headers.add('Access-Control-Allow-Origin', os.environ["ALLOWED_ORIGIN"])
+    response.headers.add('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, UPDATE, OPTIONS')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+    response.headers.add('Access-Control-Allow-Credentials', 'true')
+    return response
+
+
+def release_db_connection():
     """
     Puts the database connection back into the connection pool.
     """
@@ -106,34 +117,30 @@ def release_connection(exception):
         app.conn_pool.putconn(g.conn)
 
 
-@app.route("/send-email", methods=["POST"])
-def send_email():
-    """
-    Sends an email to the specified email address.
-    """
-    try:
-        name = request.get_json()["name"]
-        email = request.get_json()["email"]
-        organisation = request.get_json()["organisation"]
-        subject = request.get_json()["subject"]
-        message = request.get_json()["message"]
-    except Exception as e:
-        return jsonify({"status": 400, "msg": "Missing email details."}), 400
+@app.before_request
+def before_request():
+    if not check_origin():
+        return "Origin not allowed", 403
+    if request.method == "OPTIONS" or request.method == "options":
+        return allow_origin_preflight()
+    connect_to_db()
+    add_mail_to_g()
 
-    try:
-        # Send email here
-        msg = Message(
-            subject=subject,
-            sender=os.environ["EMAIL_USERNAME"],
-            recipients=["contact@messagesofhope.co.uk"],
-            body=f"From: {name}\nEmail: {email}\nOrganisation: {organisation}\n\n{message}",
-        )
-        mail.send(msg)
-    except Exception as e:
-        print(e, flush=True)
-        return jsonify({"status": 500, "msg": "Failed to send email."}), 500
 
-    return jsonify({"status": 200, "msg": "Email sent successfully."}), 200
+@app.after_request
+def after_request(response):
+    """
+    Adds headers to the response to allow CORS.
+    """
+    return add_headers(response)
+
+
+@app.teardown_request
+def teardown_request(exception):
+    """
+    Puts the database connection back into the connection pool.
+    """
+    release_db_connection()
 
 
 # Development server

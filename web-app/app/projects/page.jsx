@@ -27,7 +27,8 @@ const getProjects = async () => {
       headers: {
         "Content-Type": "application/json",
       },
-      cache: "no-store"
+      cache: "no-store",
+      credentials: "include"
     });
     if (!response.ok)
       throw new Error("Failed to fetch projects");
@@ -40,7 +41,7 @@ const getProjects = async () => {
 
 const Projects = async () => {
   const projects = await getProjects();
-  if (!projects || projects.status !== 200)
+  if (!projects)
     redirect("/not-found");
 
   return (

@@ -1,8 +1,10 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+
+import { getCookie } from "@/utils/cookie";
 
 import styles from "./LoginForm.module.css";
 
@@ -12,6 +14,14 @@ const LoginForm = () => {
   const usernameRef = useRef();
   const passwordRef = useRef();
 
+  useEffect(() => {
+    // Check local cookie for username
+    const username = getCookie(document, process.env.NEXT_PUBLIC_USERNAME_TOKEN);
+    if (username) {
+      usernameRef.current.value = username;
+    }
+  }, []);
+
   /**
    * Handle the form submission to log the user in.
    * @param {*} event The form submission event
@@ -20,7 +30,7 @@ const LoginForm = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/users/login`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_BACKEND_ADDR}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

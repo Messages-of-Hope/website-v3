@@ -122,7 +122,7 @@ const Home = async () => {
           <h4>Collecting your messages of hope and spreading them far and wide.</h4>
           <div className={styles.banner_buttons}>
             <Button className={styles.banner_button} colour="blue" link="/write-a-message" text="Write a Message"/>
-            <Button className={styles.banner_button} colour="yellow" link={projects.projects[0].url} text="Our Latest Project"/> 
+            <Button className={styles.banner_button} colour="yellow" link={projects ? projects.projects[0].url : "/projects"} text="Our Latest Project"/> 
           </div>
         </div>
       </Banner>

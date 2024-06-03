@@ -1,5 +1,6 @@
 GET_USERNAME = "SELECT username FROM users WHERE username = %s;"
 GET_HASHED_PASSWORD = "SELECT hashed_password FROM users WHERE username = %s;"
+GET_PERMISSIONS = "SELECT permissions FROM users WHERE username = %s;"
 
 
 def check_username(conn, username):
@@ -24,3 +25,15 @@ def get_hashed_password(conn, username):
     conn.commit()
     cursor.close()
     return hash
+
+
+def get_permissions(conn, username):
+    """
+    Get the permissions for a given user.
+    """
+    cursor = conn.cursor()
+    cursor.execute(GET_PERMISSIONS, (username,))
+    perm = cursor.fetchone()[0]
+    conn.commit()
+    cursor.close()
+    return perm

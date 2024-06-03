@@ -2,7 +2,6 @@ GET_PROJECTS_SUMMARY = "SELECT * FROM projects WHERE visible=1 ORDER BY ranking 
 GET_PROJECTS_SUMMARY_SET = (
     "SELECT * FROM projects WHERE visible=1 ORDER BY ranking DESC LIMIT %s;"
 )
-GET_PROJECT = "SELECT * FROM projects WHERE id=%s;"
 
 
 def project_array_to_summary_dict(arr):
